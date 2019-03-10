@@ -53,6 +53,7 @@ public class PersonalPokemon {
 			DoubleSpace();
 		}
 		BillComputer[PokeStorageNum] = newPokemon;
+		
 		PokeStorageNum++;
 	}//it needs a way to change pokemon
 	public void changePokemonfromStorage(String NameCreature) {
