@@ -40,6 +40,7 @@ public class PersonalPokemon {
 		if(PokeOrder != 6) {
 			pokeMon[PokeOrder] = newPokemon;
 		PokeOrder++;
+		
 		}
 		else {
 			System.out.println("You have too many pokemon!!");
