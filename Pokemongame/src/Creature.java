@@ -6,7 +6,6 @@ public class Creature {
 	int defense;
 	int HP;
 	int level;
-	
 	public Creature() {
 		
 	}
