@@ -45,6 +45,7 @@ public class PersonalPokemon {
 		else {
 			System.out.println("You have too many pokemon!!");
 			System.out.println("Your pokemone will be store here");
+			storePoke(newPokemon);
 		}
 		
 	}
@@ -53,7 +54,6 @@ public class PersonalPokemon {
 			DoubleSpace();
 		}
 		BillComputer[PokeStorageNum] = newPokemon;
-		
 		PokeStorageNum++;
 	}//it needs a way to change pokemon
 	public void changePokemonfromStorage(String NameCreature) {
