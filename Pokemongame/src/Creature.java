@@ -9,6 +9,7 @@ public class Creature {
 	Creature left;
 	Creature right;
 	Creature parent;
+
 	public Creature() {
 		
 	}
@@ -22,6 +23,7 @@ public class Creature {
 		this.defense = defense;
 		this.HP = HP;
 	}
+	
 	public String getName() {
 		return this.name;
 	}
