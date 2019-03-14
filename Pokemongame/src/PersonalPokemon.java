@@ -8,6 +8,10 @@ public class PersonalPokemon {
 		pokeMon[PokeOrder] = Pokemon;
 		PokeOrder++;
 	}
+	public Creature getPokemon(int i) {
+		return pokeMon[i];
+	}
+	
 	public void removesPokemon(String Pokemon) {
 		for(int PokeName = 0; PokeName < pokeMon.length-1;PokeName++) {
 			if(pokeMon[PokeName].getName().equalsIgnoreCase(Pokemon)) {

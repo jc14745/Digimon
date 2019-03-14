@@ -1,4 +1,5 @@
-
+//you really didnt use a tree but used an array instead
+//this isnt a terrible idea but at the same time we can check again to see what can be improved
 public class EnemiesDigimon {
 	int NumOfEnemies=100;
 	int NumOfStored;
@@ -31,7 +32,7 @@ public class EnemiesDigimon {
 				Enemies[pokemon] = Enemies[pokemonCompare];
 				Enemies[pokemon+1] = temp;
 				}
-				}
+			}
 		}
 	}
 	
