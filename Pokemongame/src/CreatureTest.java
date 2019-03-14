@@ -26,9 +26,15 @@ public class CreatureTest {
 			deck.addPokemon(e);
 			deck.addPokemon(f);
 			
+			a.setRight(c);
+			a.setLeft(b);
+			a.getLeft().setLeft(d);
+			a.getLeft().setRight(e);
+			a.getRight().setLeft(f);
+			
 			//deck.addPokemon(g);
 			EnemiesDigimon enemyDeck = new EnemiesDigimon();
-			enemyDeck.StoreEnemies(a);
+			/*enemyDeck.StoreEnemies(a);
 			enemyDeck.StoreEnemies(b);
 			enemyDeck.StoreEnemies(c);
 			enemyDeck.StoreEnemies(d);
@@ -38,6 +44,8 @@ public class CreatureTest {
 			for(int i=0; i< 5; i++) {
 				System.out.println(enemyDeck.Enemies[i].getName());
 			}
-			
+			*/
+			enemyDeck.createRoot(a);
+			enemyDeck.add(a);
 		}
 }

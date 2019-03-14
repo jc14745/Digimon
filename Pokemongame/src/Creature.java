@@ -61,4 +61,20 @@ public class Creature {
 	public int getLevel() {
 		return this.level;
 	}
+	public Creature getLeft() {
+		return left;
+	}
+	public void setLeft(Creature left) {
+		this.left = left;
+		this.parent = this;
+	}
+	public Creature getRight() {
+		return right;
+	}
+	public void setRight(Creature right) {
+		this.right = right;
+		this.parent = this;
+	}
+	
+	
 }
