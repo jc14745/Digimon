@@ -1,6 +1,5 @@
 
-//you really didnt use a tree but used an array instead
-//this isnt a terrible idea but at the same time we can check again to see what can be improved
+//check what i did here
 public class EnemiesDigimon {
 
 	Creature root;
@@ -9,14 +8,19 @@ public class EnemiesDigimon {
 	Creature[] Enemies = new Creature[NumOfEnemies];
 	public void createRoot(Creature root) {
 		this.root = root;
+		Enemies[0] = this.root;
 	}
 	public Creature getRoot() {
 		return this.root;
-	}
-	public void add() {
 		
+	}	
+	public void add(Creature node) {
+		Enemies[NumOfStored++]= node;
+		System.out.println(node.getName());
+		if(node.getLeft() != null) add(node.left);
+		if(node.getRight() != null) add(node.right);
 	}
-	public void StoreEnemies(Creature C) {
+	/*public void StoreEnemies(Creature C) {
 		Creature Enemiesdigimon = new Creature();
 		if(root == null) {
 			root = C;
@@ -42,6 +46,7 @@ public class EnemiesDigimon {
 			StoreEnemies(C);
 		}
 	}
+	*/
 	public void sortEnemies() {
 		for(int pokemon = 0; pokemon < Enemies.length; pokemon++) {
 				for(int pokemonCompare = pokemon+1; pokemonCompare < Enemies.length;pokemonCompare++) {
