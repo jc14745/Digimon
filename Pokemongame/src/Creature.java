@@ -6,6 +6,10 @@ public class Creature {
 	int defense;
 	int HP;
 	int level;
+	Creature left;
+	Creature right;
+	Creature parent;
+
 	public Creature() {
 		
 	}
@@ -19,34 +23,58 @@ public class Creature {
 		this.defense = defense;
 		this.HP = HP;
 	}
+	
 	public String getName() {
-		return name;
+		return this.name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
 	public int getSpeed() {
-		return speed;
+		return this.speed;
 	}
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
 	public int getAttack() {
-		return attack;
+		return this.attack;
 	}
 	public void setAttack(int attack) {
 		this.attack = attack;
 	}
 	public int getDefense() {
-		return defense;
+		return this.defense;
 	}
 	public void setDefense(int defense) {
 		this.defense = defense;
 	}
 	public int getHP() {
-		return HP;
+		return this.HP;
 	}
 	public void setHP(int hP) {
-		HP = hP;
+		this.HP = hP;
 	}
+	public void setLevel(int level) {
+		this.level = level;
+		
+	}
+	public int getLevel() {
+		return this.level;
+	}
+	public Creature getLeft() {
+		return left;
+	}
+	public void setLeft(Creature left) {
+		this.left = left;
+		this.parent = this;
+	}
+	public Creature getRight() {
+		return right;
+	}
+	public void setRight(Creature right) {
+		this.right = right;
+		this.parent = this;
+	}
+	
+	
 }
