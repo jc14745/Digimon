@@ -1,6 +1,5 @@
 
-//you really didnt use a tree but used an array instead
-//this isnt a terrible idea but at the same time we can check again to see what can be improved
+//check what i did here
 public class EnemiesDigimon {
 
 	Creature root;
