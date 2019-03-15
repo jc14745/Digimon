@@ -48,7 +48,7 @@ public class EnemiesDigimon {
 	}
 	*/
 	public void sortEnemies() {
-		for(int pokemon = 0; pokemon < Enemies.length; pokemon++) {
+		for(int pokemon = 0; pokemon < NumOfStored-1; pokemon++) {
 				for(int pokemonCompare = pokemon+1; pokemonCompare < Enemies.length;pokemonCompare++) {
 			if(Enemies[pokemon].level > Enemies[pokemonCompare].level) {
 				Creature temp = null;

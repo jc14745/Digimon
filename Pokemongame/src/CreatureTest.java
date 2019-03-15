@@ -4,6 +4,7 @@ public class CreatureTest {
 
 		@Test
 		public void createCreature(){
+
 			PersonalPokemon deck = new PersonalPokemon();
 			Creature a = new Creature("a");
 			a.setLevel(2);
@@ -31,7 +32,6 @@ public class CreatureTest {
 			a.getLeft().setLeft(d);
 			a.getLeft().setRight(e);
 			a.getRight().setLeft(f);
-			
 			//deck.addPokemon(g);
 			EnemiesDigimon enemyDeck = new EnemiesDigimon();
 			/*enemyDeck.StoreEnemies(a);
