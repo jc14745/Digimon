@@ -4,7 +4,7 @@ public class CreatureTest {
 
 		@Test
 		public void createCreature(){
-
+			MapDigimon Digi = new MapDigimon();
 			PersonalPokemon deck = new PersonalPokemon();
 			Creature a = new Creature("a");
 			a.setLevel(2);
@@ -13,12 +13,18 @@ public class CreatureTest {
 			Creature c = new Creature("c");
 			c.setLevel(8);
 			Creature d = new Creature("d");
-			d.setLevel(1);
+			d.setLevel(11);
 			Creature e = new Creature("e");
-			e.setLevel(2);
+			e.setLevel(21);
 			Creature f = new Creature("f");
-			f.setLevel(6);
+			f.setLevel(61);
 			//Creature g = new Creature("g");
+			Digi.put(a);
+			Digi.put(b);
+			Digi.put(c);
+			Digi.put(d);
+			Digi.put(e);
+			Digi.put(f);
 
 			deck.addPokemon(a);
 			deck.addPokemon(b);
@@ -47,5 +53,6 @@ public class CreatureTest {
 			*/
 			enemyDeck.createRoot(a);
 			enemyDeck.add(a);
+			
 		}
 }
