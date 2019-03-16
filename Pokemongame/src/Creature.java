@@ -85,20 +85,7 @@ public class Creature {
 	public boolean getUsed() {
 		return this.used;
 	}
-	
-<<<<<<< HEAD
 
-=======
-	
-<<<<<<< HEAD
->>>>>>> refs/remotes/origin/master
 }
-<<<<<<< HEAD
 
 
-
-=======
-=======
-}
->>>>>>> refs/remotes/origin/master
->>>>>>> refs/remotes/origin/master
