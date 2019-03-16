@@ -76,9 +76,6 @@ public class Creature {
 		this.parent = this;
 	}
 	
-	
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> refs/remotes/origin/master
+

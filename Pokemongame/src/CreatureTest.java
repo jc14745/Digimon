@@ -50,20 +50,7 @@ public class CreatureTest {
 			enemyDeck.add(a);
 
 			MapDigimon Digi = new MapDigimon();
-			PersonalPokemon deck = new PersonalPokemon();
-			Creature a = new Creature("a");
-			a.setLevel(2);
-			Creature b = new Creature("b");
-			b.setLevel(3);
-			Creature c = new Creature("c");
-			c.setLevel(8);
-			Creature d = new Creature("d");
-			d.setLevel(11);
-			Creature e = new Creature("e");
-			e.setLevel(21);
-			Creature f = new Creature("f");
-			f.setLevel(61);
-			//Creature g = new Creature("g");
+	
 			Digi.put(a);
 			Digi.put(b);
 			Digi.put(c);
@@ -84,7 +71,7 @@ public class CreatureTest {
 			a.getLeft().setRight(e);
 			a.getRight().setLeft(f);
 			//deck.addPokemon(g);
-			EnemiesDigimon enemyDeck = new EnemiesDigimon();
+		
 			/*enemyDeck.StoreEnemies(a);
 			enemyDeck.StoreEnemies(b);
 			enemyDeck.StoreEnemies(c);
