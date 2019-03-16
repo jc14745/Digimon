@@ -77,4 +77,8 @@ public class Creature {
 	}
 	
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> refs/remotes/origin/master
