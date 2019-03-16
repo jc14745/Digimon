@@ -86,8 +86,19 @@ public class Creature {
 		return this.used;
 	}
 	
+<<<<<<< HEAD
 
+=======
+	
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
 }
+<<<<<<< HEAD
 
 
 
+=======
+=======
+}
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
