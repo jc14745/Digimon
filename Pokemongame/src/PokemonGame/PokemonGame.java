@@ -3,7 +3,7 @@ import Graphics.*;
 import java.awt.event.KeyEvent;
 import java.util.Random;
 
-public class TetrisGame {
+public class PokemonGame {
 
   public DelayedUpdateAdapter dua;
   Background field;
@@ -42,7 +42,7 @@ public class TetrisGame {
       { // M
           {0, 0, 0, 0,}, {0, 7, 7, 0,}, {0, 7, 7, 0,}, {0, 0, 0, 0,}},};
 
-  public TetrisGame(Background b, Palette p, DelayedUpdateAdapter d) {
+  public PokemonGame(Background b, Palette p, DelayedUpdateAdapter d) {
     field = b;
     pal = p;
     dua = d;

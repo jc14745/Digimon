@@ -41,16 +41,18 @@ public class Fight {
 			attack(this.ally, this.enemy);
 			System.out.println(this.getEnemy().getHP());
 			nextMove1();
+			firstMove();
 		}
 		else{
 			//automatic attack from attack list
 			attack(this.enemy,this.ally);
 			System.out.println(this.ally.getName() + " " + this.ally.getHP());
 			nextMove2();
+			firstMove();
 			
 		}
 		
-		firstMove();
+		
 		
 	}
 	public void nextMove1(){
@@ -75,11 +77,11 @@ public class Fight {
 		}
 	public void win() {
 		System.out.println("you won");
-		System.exit(0);
+		
 	}
 	public void lost() {
 		System.out.println("your pokemon died");
-		System.exit(0);
+		
 	}
 }
 
