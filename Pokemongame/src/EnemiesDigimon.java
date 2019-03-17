@@ -12,10 +12,8 @@ public class EnemiesDigimon{
 		System.out.println(node.getName());
 		if(node.getLeft() != null) add(node.left);
 		if(node.getRight() != null) add(node.right);
-	}/*
+	}
 	
-	
-	*/
 	public Creature getEnemy(Creature C) {
 		if(C.getUsed()) {
 			if(random()==0) {

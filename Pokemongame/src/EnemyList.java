@@ -1,7 +1,8 @@
 
 public class EnemyList {
-	public void createCreature() {
 		EnemiesDigimon enemyDeck = new EnemiesDigimon();
+	public void createCreature() {
+	
 		
 		//Creature(String name, int speed, int attack, int defense, int HP, int level)
 		
@@ -34,7 +35,7 @@ public class EnemyList {
 		
 		enemyDeck.createRoot(Zubat);
 		enemyDeck.add(Zubat);
-	
+		
 		
 	}
 }
