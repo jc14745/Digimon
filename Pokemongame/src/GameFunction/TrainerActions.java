@@ -8,6 +8,18 @@ public class TrainerActions extends PersonalPokemon{
 		//be able to get personal and enemy pokemon
 		this.personalPokemon = personalPokemon;
 		this.enemy = enemy;
+	}//healing
+	public void healing() {
+		if(Storage[0].Healingpotions>0) {
+		int healing = 0;
+		healing = personalPokemon.getHP()+4;
+		personalPokemon.setHP(healing);
+		Storage[0].removeHealing();
+		}
+		else {
+			System.out.println("No healing Available");
+		}
+		
 	}
 	public void capture(){
 		//be able to attempt to capture the pokemon based on level and speed or something like that
