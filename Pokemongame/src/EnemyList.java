@@ -1,6 +1,8 @@
 
 public class EnemyList {
 	public void createCreature() {
+		EnemiesDigimon enemyDeck = new EnemiesDigimon();
+		
 		//Creature(String name, int speed, int attack, int defense, int HP, int level)
 		
 		Creature Zubat = new Creature("Zubat", 3, 2, 1, 5, 1);//#041
@@ -12,51 +14,27 @@ public class EnemyList {
 		Creature Caterpie  = new Creature("Caterpie ", 3, 2, 2, 10, 2);//#010
 
 		
-		Creature Rattata = new Creature("Rattata", 4, 3, 2, 10, 3);//#019
+		Creature Rattata = new Creature("Rattata", 4, 3, 2, 12, 3);//#019
 	
 		
-		Creature d = new Creature("d");
-		d.setLevel(1);
-		Creature e = new Creature("e");
-		e.setLevel(2);
-		Creature f = new Creature("f");
-		f.setLevel(6);
-
+		Creature Clefairy = new Creature("Clefairy", 2, 2, 2, 12, 3);//#035
 		
-		Pidgey.setRight(c);
-		Pidgey.setLeft(Caterpie);
-		Pidgey.getLeft().setLeft(d);
-		Pidgey.getLeft().setRight(e);
-		Pidgey.getRight().setLeft(f);
 		
-		EnemiesDigimon enemyDeck = new EnemiesDigimon();
+		Creature Paras = new Creature("Paras", 2, 4, 3, 12, 3);//#046
 		
-		enemyDeck.createRoot(a);
-		enemyDeck.add(a);
 		
-		a.setLevel(2);
-		b.setLevel(3);
-		c.setLevel(8);
-		d.setLevel(11);
-		e.setLevel(21);
-		f.setLevel(61);
-
+		//Creature Bellsprout = new Creature("Bellsprout", );
 		
-		deck.addPokemon(a);
-		deck.addPokemon(b);
-		deck.addPokemon(c);
-		deck.addPokemon(d);
-		deck.addPokemon(e);
-		deck.addPokemon(f);
+		Zubat.setRight(Caterpie);
+		Zubat.setLeft(Pidgey);
+		Zubat.getLeft().setLeft(Rattata);
+		Zubat.getLeft().setRight(Clefairy);
+		Zubat.getRight().setLeft(Paras);
 		
-		a.setRight(c);
-		a.setLeft(b);
-		a.getLeft().setLeft(d);
-		a.getLeft().setRight(e);
-		a.getRight().setLeft(f);
 		
-		enemyDeck.createRoot(a);
-		enemyDeck.add(a);
+		enemyDeck.createRoot(Zubat);
+		enemyDeck.add(Zubat);
+	
 		
 	}
 }
