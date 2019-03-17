@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import Graphics.*;
+import PokemonGame.TetrisGame;
 
 
 

@@ -1,10 +1,14 @@
 package GameFunction;
-public class PersonalPokemon {
+
+public class PersonalPokemon
+{
 	int PokeOrder;
 	int PokeLimits = 6;
 	int PokeStorageNum;
 	Creature[] pokeMon = new Creature[PokeLimits];
+	Items[] Storage = new Items[2];
 	Creature[] BillComputer = new Creature[PokeLimits*2];
+	private int numberofItems;
 	public void storePersonalPokemon(Creature Pokemon) {
 		pokeMon[PokeOrder] = Pokemon;
 		PokeOrder++;
@@ -51,7 +55,6 @@ public class PersonalPokemon {
 			System.out.println("Your pokemone will be store here");
 			storePoke(newPokemon);
 		}
-		
 	}
 	public void storePoke(Creature newPokemon) {
 		if(PokeStorageNum > BillComputer.length) {
@@ -77,5 +80,18 @@ public class PersonalPokemon {
 			newTemp[PokeInBill] = BillComputer[PokeInBill];
 		}
 		this.BillComputer = newTemp;
+	}// the items are going be for now 1 is healing potions and 2 is pokeballs
+	public void StoreItems(int numberofItem) {
+		Items pokeStuff = new Items();
+		if(numberofItem == 1) {
+			pokeStuff.addhealingitems();
+			Storage[0] = pokeStuff;
+		}
+		else if(numberofItems==2) {
+			pokeStuff.addPokeballs();
+			Storage[1] = pokeStuff;
+		}else {
+			System.out.println("we don't have the item yet!?");
+		}
 	}
 }
