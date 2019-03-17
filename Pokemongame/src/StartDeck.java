@@ -5,7 +5,6 @@ public class StartDeck {
 		
 		public void createDeck() {
 				
-			
 			Creature Pikachu = new Creature("Pikachu", 3, 2, 2, 7, 1);
 			newDeck.addPokemon(Pikachu);
 			System.out.println("Hello new trainer! Here is your first pokemon!");
