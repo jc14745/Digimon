@@ -51,12 +51,12 @@ public class Fight {
 	
 	public void attack(Creature a, Creature b){
 		if(b.getDefense() < a.getAttack()) {
-			System.out.println("@");
+			
 		b.setHP(b.getHP()-a.attack);
 		}
 		else {
 			b.setHP(b.getHP()- (a.attack/2)); 
-			System.out.println("@");
+		
 			}
 		}
 	public void win() {
