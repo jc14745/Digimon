@@ -1,9 +1,6 @@
 
 public class Fight {
 	int i = //some keystroke
-			
-	TrainerActions trainerActionsDuringFight = new TrainerActions(this.getPersonalPokemon(i), this.getEnemy());
-	
 	EnemiesDigimon enemyDeck;
 	PersonalPokemon personalDeck;
 	Fight(EnemiesDigimon enemyDeck, PersonalPokemon personalDeck){
@@ -22,7 +19,7 @@ public class Fight {
 		System.out.println(this.getEnemy().getName() + " " +this.getEnemy().getHP());
 		System.out.println(this.getPersonalPokemon(i).getName() + " " +this.getPersonalPokemon(i).getHP());
 		
-		
+		TrainerActions trainerActionsDuringFight = new TrainerActions(this.getPersonalPokemon(i), this.getEnemy());
 		if(this.getPersonalPokemon(i).getHP() == 0 || this.getPersonalPokemon(i).getHP() < 0) {
 			lost();
 		}
