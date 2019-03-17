@@ -1,3 +1,4 @@
+package GameFunction;
 //check what i did here
 public class EnemiesDigimon{
 	Creature root;

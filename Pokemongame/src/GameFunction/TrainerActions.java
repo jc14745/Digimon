@@ -1,11 +1,12 @@
+package GameFunction;
 
 public class TrainerActions extends PersonalPokemon{
-	Creature personalPokemon;
+	Creature personal;
 	Creature enemy;
 	//this is so i can use the above in this class
-	public TrainerActions(Creature personalPokemon, Creature enemy) {
+	public TrainerActions(Creature personal, Creature enemy) {
 		//be able to get personal and enemy pokemon
-		this.personalPokemon = personalPokemon;
+		this.personal = personal;
 		this.enemy = enemy;
 	}
 	public void capture(){
@@ -33,5 +34,13 @@ public class TrainerActions extends PersonalPokemon{
 	public int randomChance() {
 		return (int) (Math.random()*10+1);
 	}
+	public void attacks() {
+		
 	}
+	public void run() {
+		if(personal.getSpeed() > enemy.getSpeed()) {
+			
+		}
+	}
+}
 	

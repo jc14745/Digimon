@@ -1,6 +1,7 @@
+package GameFunction;
 
 public class Fight {
-	int i = //some keystroke
+	int i = 0; //some keystroke
 			
 	TrainerActions trainerActionsDuringFight = new TrainerActions(this.getPersonalPokemon(i), this.getEnemy());
 	
@@ -31,6 +32,7 @@ public class Fight {
 				//key strokes choose action
 				
 				trainerActionsDuringFight.capture();
+				
 				win();//give oprotunity to capture
 				
 			}

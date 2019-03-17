@@ -2,9 +2,9 @@ package TestCreator;
 
 import org.junit.jupiter.api.Test;
 
-import Creature;
-import EnemiesDigimon;
-import PersonalPokemon;
+import GameFunction.Creature;
+import GameFunction.EnemiesDigimon;
+import GameFunction.PersonalPokemon;
 public class CreatureTest {
 
 		@Test

@@ -3,7 +3,7 @@ package TestCreator;
 import java.util.HashMap;
 import java.util.Map;
 
-import Creature;
+import GameFunction.Creature;
 public class MapDigimon {
 	//* the Lv should look like Lv1A the A will represent the pokemon like
 	//agumon will be A and be lv 1 and pikachu will be B and also lv 1

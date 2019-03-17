@@ -1,3 +1,4 @@
+package GameFunction;
 public class PersonalPokemon {
 	int PokeOrder;
 	int PokeLimits = 6;
