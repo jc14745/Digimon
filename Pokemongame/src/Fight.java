@@ -22,7 +22,7 @@ public class Fight {
 		else if(this.getEnemy().getHP() == 0 || this.getEnemy().getHP() < 0) {
 			if(this.getEnemy().getHP() == 0) win();//give oprotunity to capture
 			else {
-				System.out.println("you destoryed the enemy pokemon");
+				System.out.println("you destory that enemy pokeass");
 				win();
 			}
 		}
