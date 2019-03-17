@@ -9,6 +9,7 @@ public class Creature {
 	Creature left;
 	Creature right;
 	Creature parent;
+	boolean used = false;
 
 	public Creature() {
 		
@@ -75,7 +76,16 @@ public class Creature {
 		this.right = right;
 		this.parent = this;
 	}
-	
+
+	public void setTrue() {
+		this.used = true;
+	}
+	public void setFalse() {
+		this.used = false;
+	}
+	public boolean getUsed() {
+		return this.used;
+	}
 
 }
 

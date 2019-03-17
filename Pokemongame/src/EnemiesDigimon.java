@@ -1,5 +1,6 @@
+
 //check what i did here
-public class EnemiesDigimon {
+public class EnemiesDigimon{
 
 	Creature root;
 	int NumOfEnemies=100;
@@ -18,8 +19,8 @@ public class EnemiesDigimon {
 		System.out.println(node.getName());
 		if(node.getLeft() != null) add(node.left);
 		if(node.getRight() != null) add(node.right);
-	}
-	/*public void StoreEnemies(Creature C) {
+	}/*
+	public void StoreEnemies(Creature C) {
 		Creature Enemiesdigimon = new Creature();
 		if(root == null) {
 			root = C;
@@ -27,7 +28,7 @@ public class EnemiesDigimon {
 		}
 		else {
 			if(Enemies[NumOfStored].level < C.level && Enemies[(NumOfStored*2)+1]== null) {
-				Enemiesdigimon = leftChild;
+			
 				Enemiesdigimon.setArr((NumOfStored*2)+1);
 				Enemies[Enemiesdigimon.getNumber()] = Enemiesdigimon;
 				
@@ -59,5 +60,3 @@ public class EnemiesDigimon {
 		}
 	}
 }
-	
-

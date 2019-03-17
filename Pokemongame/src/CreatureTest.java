@@ -5,7 +5,7 @@ public class CreatureTest {
 		@Test
 		public void createCreature(){
 
-			PersonalPokemon deck = new PersonalPokemon();
+	PersonalPokemon deck = new PersonalPokemon();
 			Creature a = new Creature("a");
 			a.setLevel(2);
 			Creature b = new Creature("b");
@@ -50,7 +50,44 @@ public class CreatureTest {
 			enemyDeck.add(a);
 
 			MapDigimon Digi = new MapDigimon();
-	
+
+			deck.addPokemon(a);
+			deck.addPokemon(b);
+			deck.addPokemon(c);
+			deck.addPokemon(d);
+			deck.addPokemon(e);
+			deck.addPokemon(f);
+			
+			a.setRight(c);
+			a.setLeft(b);
+			a.getLeft().setLeft(d);
+			a.getLeft().setRight(e);
+			a.getRight().setLeft(f);
+			
+			
+			/*enemyDeck.StoreEnemies(a);
+			enemyDeck.StoreEnemies(b);
+			enemyDeck.StoreEnemies(c);
+			enemyDeck.StoreEnemies(d);
+			enemyDeck.StoreEnemies(e);
+			enemyDeck.StoreEnemies(f);
+			
+			for(int i=0; i< 5; i++) {
+				System.out.println(enemyDeck.Enemies[i].getName());
+			}
+			*/
+			enemyDeck.createRoot(a);
+			enemyDeck.add(a);
+
+		
+			a.setLevel(2);
+			b.setLevel(3);
+			c.setLevel(8);
+			d.setLevel(11);
+			e.setLevel(21);
+			f.setLevel(61);
+		
+
 			Digi.put(a);
 			Digi.put(b);
 			Digi.put(c);
@@ -71,7 +108,7 @@ public class CreatureTest {
 			a.getLeft().setRight(e);
 			a.getRight().setLeft(f);
 			//deck.addPokemon(g);
-		
+
 			/*enemyDeck.StoreEnemies(a);
 			enemyDeck.StoreEnemies(b);
 			enemyDeck.StoreEnemies(c);
@@ -85,6 +122,7 @@ public class CreatureTest {
 			*/
 			enemyDeck.createRoot(a);
 			enemyDeck.add(a);
+
 
 		}
 }
