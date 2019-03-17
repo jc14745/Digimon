@@ -32,6 +32,12 @@ public class StartPoint {
 		}
 	StartPoint() throws InterruptedException, IOException{
 			deck1.createDeck();
+			
+			Fight fight1 = new Fight( list1.enemyDeck, deck1.newDeck );
+			fight1.firstMove();
+			
+			
+			/*
 			File palFile = new File("Palette0.png");
 		    File tileFile = new File("tetris.png");
 
@@ -65,6 +71,7 @@ public class StartPoint {
 		    });
 
 		    Thread.sleep(8 * 60 * 1000);
+		    */
 		
 	}
 	 public Tile[] getTiles(File tileFile) throws IOException {

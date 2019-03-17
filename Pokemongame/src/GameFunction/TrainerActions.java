@@ -10,11 +10,11 @@ public class TrainerActions extends PersonalPokemon{
 		this.enemy = enemy;
 	}
 	public void capture(){
-		//be able to attempt to capture the pokemon based on level and speed or something like that
-		if(Storage[1].getPokeBalls() != 0) {
+		
+		if(Storage[1].getPokeBalls() != 0) {//gets pokeball
 		if(enemy.getHP()== 0) {
 			addPokemon(enemy);
-			Storage[1].removePokeballs();
+			Storage[1].removePokeballs();//uses a ball if available
 		}
 		else if(enemy.getHP()<=1) {
 			if(randomChance()<10) {
