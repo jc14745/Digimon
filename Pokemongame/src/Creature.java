@@ -17,12 +17,13 @@ public class Creature {
 	public Creature(String name) {
 		this.name = name;
 	}
-	public Creature(String name, int speed, int attack, int defense, int HP) {
+	public Creature(String name, int speed, int attack, int defense, int HP, int level) {
 		this.name = name;
 		this.speed = speed;
 		this.attack = attack;
 		this.defense = defense;
 		this.HP = HP;
+		this.level = level;
 	}
 	
 	public String getName() {

@@ -1,14 +1,20 @@
 
 public class EnemyList {
 	public void createCreature() {
+		//Creature(String name, int speed, int attack, int defense, int HP, int level)
+		
+		Creature Zubat = new Creature("Zubat", 3, 2, 1, 5, 1);//#041
+		
+		
+		Creature Pidgey = new Creature("Pidgey", 3, 2, 2, 10, 2);//#016
+	
+		
+		Creature Caterpie  = new Creature("Caterpie ", 3, 2, 2, 10, 2);//#010
 
-		PersonalPokemon deck = new PersonalPokemon();
-		Creature a = new Creature("a");
-		a.setLevel(2);
-		Creature b = new Creature("b");
-		b.setLevel(3);
-		Creature c = new Creature("c");
-		c.setLevel(8);
+		
+		Creature Rattata = new Creature("Rattata", 4, 3, 2, 10, 3);//#019
+	
+		
 		Creature d = new Creature("d");
 		d.setLevel(1);
 		Creature e = new Creature("e");
@@ -16,18 +22,12 @@ public class EnemyList {
 		Creature f = new Creature("f");
 		f.setLevel(6);
 
-		deck.addPokemon(a);
-		deck.addPokemon(b);
-		deck.addPokemon(c);
-		deck.addPokemon(d);
-		deck.addPokemon(e);
-		deck.addPokemon(f);
 		
-		a.setRight(c);
-		a.setLeft(b);
-		a.getLeft().setLeft(d);
-		a.getLeft().setRight(e);
-		a.getRight().setLeft(f);
+		Pidgey.setRight(c);
+		Pidgey.setLeft(Caterpie);
+		Pidgey.getLeft().setLeft(d);
+		Pidgey.getLeft().setRight(e);
+		Pidgey.getRight().setLeft(f);
 		
 		EnemiesDigimon enemyDeck = new EnemiesDigimon();
 		

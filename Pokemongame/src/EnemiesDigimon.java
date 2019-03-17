@@ -19,7 +19,14 @@ public class EnemiesDigimon{
 		System.out.println(node.getName());
 		if(node.getLeft() != null) add(node.left);
 		if(node.getRight() != null) add(node.right);
-	}/*
+	}
+	public Creature getEnemy() {
+		
+		
+	}
+	
+	
+	/*
 	public void StoreEnemies(Creature C) {
 		Creature Enemiesdigimon = new Creature();
 		if(root == null) {
