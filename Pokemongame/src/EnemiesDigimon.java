@@ -25,6 +25,7 @@ public class EnemiesDigimon{
 				getEnemy(C.getRight());
 			}
 		}
+		
 		return C;
 	}
 	public int random() {
