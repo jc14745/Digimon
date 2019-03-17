@@ -1,5 +1,10 @@
+package TestCreator;
 
 import org.junit.jupiter.api.Test;
+
+import Creature;
+import EnemiesDigimon;
+import PersonalPokemon;
 public class CreatureTest {
 
 		@Test

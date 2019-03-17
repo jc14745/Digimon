@@ -1,4 +1,3 @@
-
 //check what i did here
 public class EnemiesDigimon{
 	Creature root;
@@ -23,7 +22,6 @@ public class EnemiesDigimon{
 				getEnemy(C.getRight());
 			}
 		}
-		
 		return C;
 	}
 	public int random() {

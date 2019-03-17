@@ -1,6 +1,8 @@
 
 public class EnemyList {
+	
 		EnemiesDigimon enemyDeck = new EnemiesDigimon();
+		
 	public void createCreature() {
 	
 		

@@ -1,5 +1,9 @@
 
 public class Fight {
+	int i = //some keystroke
+			
+	TrainerActions trainerActionsDuringFight = new TrainerActions(this.getPersonalPokemon(i), this.getEnemy());
+	
 	EnemiesDigimon enemyDeck;
 	PersonalPokemon personalDeck;
 	Fight(EnemiesDigimon enemyDeck, PersonalPokemon personalDeck){
@@ -10,42 +14,59 @@ public class Fight {
 		return enemyDeck.getEnemy(enemyDeck.getRoot());
 	}
 	public Creature getPersonalPokemon(int i) {
+		
 		return personalDeck.getPokemon(i);
 	}
 	
 	public void firstMove(int i){
 		System.out.println(this.getEnemy().getName() + " " +this.getEnemy().getHP());
 		System.out.println(this.getPersonalPokemon(i).getName() + " " +this.getPersonalPokemon(i).getHP());
+		
+		
 		if(this.getPersonalPokemon(i).getHP() == 0 || this.getPersonalPokemon(i).getHP() < 0) {
 			lost();
 		}
 		else if(this.getEnemy().getHP() == 0 || this.getEnemy().getHP() < 0) {
-			if(this.getEnemy().getHP() == 0) win();//give oprotunity to capture
+			if(this.getEnemy().getHP() == 0) {
+				//key strokes choose action
+				
+				trainerActionsDuringFight.capture();
+				win();//give oprotunity to capture
+				
+			}
 			else {
-				System.out.println("you destory that enemy pokeass");
+				System.out.println("You have killed the enemy pokemon.");
+				this.getEnemy().setTrue();
 				win();
 			}
 		}
+		
 		else if(this.getPersonalPokemon(i).getSpeed() > this.getEnemy().getSpeed()) {
+			
+			//key stroke choose action
+			
 			attack(this.getPersonalPokemon(i), this.getEnemy());
 			System.out.println(this.getEnemy().getHP());
 			nextMove1(i);
 		}
 		else{
+			//automatic attack from attack list
 			attack(this.getEnemy(),this.getPersonalPokemon(i));
-			
 			System.out.println(this.getPersonalPokemon(i).getName() + " " +this.getPersonalPokemon(i).getHP());
 			nextMove2(i);
 			
 		}
+		
 		firstMove(i);
 		
 	}
 	public void nextMove1(int i){
+		//automatic attack from attack list
 		attack(this.getEnemy(),this.getPersonalPokemon(i));
 	}
 	
 	public void nextMove2(int i){
+		//keystrokes to choose action
 		attack(this.getPersonalPokemon(i), this.getEnemy());
 	}
 	
