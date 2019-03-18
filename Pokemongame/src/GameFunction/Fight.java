@@ -1,16 +1,19 @@
 package GameFunction;
 
+import Graphics.DelayedUpdateAdapter;
 
 public class Fight {
 	
+	public DelayedUpdateAdapter dua;
 	EnemiesDigimon enemyDeck;
 	PersonalPokemon personalDeck;
 	Creature enemy, ally;
-	Fight(EnemiesDigimon enemyDeck, PersonalPokemon personalDeck){
+	public Fight(EnemiesDigimon enemyDeck, PersonalPokemon personalDeck, DelayedUpdateAdapter dua){
 		this.enemyDeck = enemyDeck;
 		this.personalDeck = personalDeck;
 		this.enemy = getEnemy();
 		this.ally = getPersonalPokemon();
+		this.dua = dua;
 	}
 	public Creature getEnemy(){
 		return enemyDeck.getEnemy(enemyDeck.getRoot());
@@ -49,11 +52,7 @@ public class Fight {
 			System.out.println(this.ally.getName() + " " + this.ally.getHP());
 			nextMove2();
 			firstMove();
-			
 		}
-		
-		
-		
 	}
 	public void nextMove1(){
 		//automatic attack from attack list

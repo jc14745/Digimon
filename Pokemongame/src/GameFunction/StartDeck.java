@@ -2,7 +2,7 @@ package GameFunction;
 
 public class StartDeck {
 		
-		PersonalPokemon newDeck = new PersonalPokemon();
+		public PersonalPokemon newDeck = new PersonalPokemon();
 		
 		public void createDeck() {
 				

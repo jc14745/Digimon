@@ -14,36 +14,30 @@ import PokemonGame.PokemonGame;
 
 
 public class StartPoint {
-	static EnemyList list1 = new EnemyList();
-	static StartDeck deck1 = new StartDeck();
+	
 	
 	public static void main(String[] args) {
 		 try {
-			  createEnemies();
 		      new StartPoint();
 		      
 		    } catch (Exception e) {
 		      System.err.print(e);
 		    }
 	}
-	 static EnemyList createEnemies() {
-			
-			list1.createCreature();
-			return list1;
-		}
+	
 	StartPoint() throws InterruptedException, IOException{
-			deck1.createDeck();
-			
-			Fight fight1 = new Fight( list1.enemyDeck, deck1.newDeck );
-			fight1.firstMove();
-			
-			
+			 EnemyList list1 = new EnemyList();
+			 StartDeck deck1 = new StartDeck();
 			
 			File palFile = new File("Palette0.png");
-		    File tileFile = new File("tetris.png");
-		    File zubatFile = new File("Zubat.png");
+			File tileFile = new File("pokemon.png");
+		    //File tileFile = new File("tetris.png");
+		   // File zubatFile = new File("Zubat.png");
 		    
 		    Tile[] tiles = getTiles(tileFile);
+		    //Tile[] zubat = getTiles(zubatFile);
+		   
+		    
 		    TileSheet ts = new TileSheet();
 		    ts.tiles = tiles;
 
@@ -56,12 +50,20 @@ public class StartPoint {
 		    final Board b = new Board(layers);
 		   
 		    PokemonGame tg = new PokemonGame(b0, pal, b.dua);
+		   // PokemonGame pg = new PokemonGame(b0, pal, b.dua, list1, deck1);
 
 		    b.dua.register(KeyEvent.VK_A);
 		    b.dua.register(KeyEvent.VK_Q);
 		    b.dua.register(KeyEvent.VK_E);
 		    b.dua.register(KeyEvent.VK_D);
 		    b.dua.register(KeyEvent.VK_S);
+		    
+		    b.dua.register(KeyEvent.VK_1);
+		    b.dua.register(KeyEvent.VK_2);
+		    b.dua.register(KeyEvent.VK_3);
+		    b.dua.register(KeyEvent.VK_4);
+		    
+		    b.dua.register(KeyEvent.VK_ENTER);
 
 		    b.frameEvents.add(() -> {
 		      tg.doTick();
