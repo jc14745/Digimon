@@ -3,6 +3,10 @@ import Graphics.*;
 import java.awt.event.KeyEvent;
 import java.util.Random;
 
+import GameFunction.EnemyList;
+import GameFunction.Fight;
+import GameFunction.StartDeck;
+
 public class PokemonGame {
 
   public DelayedUpdateAdapter dua;
@@ -488,4 +492,90 @@ public class PokemonGame {
     }
     blocks[0] = new int[10];
   }
+  
+  	/*
+	static EnemyList list1;
+	static StartDeck deck1;
+	public PokemonGame(Background b, Palette p, DelayedUpdateAdapter d, EnemyList list1, StartDeck deck1) {
+		PokemonGame.list1 = list1;
+		PokemonGame.deck1 = deck1;
+		
+		createEnemies();
+		
+	    field = b;
+	    pal = p;
+	    dua = d;
+
+	    pal.localPalettes[0] = new byte[] {0, 34, 40, 44, 46, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3,};
+	    pal.localPalettes[7] = new byte[] {0, 6, 7, 8, 7, 6, 7, 6, 7, 6, 7, 6, 7, 6, 7, 6,};
+	    pal.localPalettes[4] = new byte[] {0, 9, 10, 11, 10, 9, 10, 9, 10, 9, 10, 9, 10, 9, 10, 9};
+	    pal.localPalettes[5] = new byte[] {0, 12, 13, 14, 0, 2, 3, 2, 1, 0, 4, 21, 32, 33, 34, 35};
+	    pal.localPalettes[2] = new byte[] {0, 16, 17, 18, 0, 2, 3, 2, 1, 0, 4, 21, 32, 33, 34, 35};
+	    pal.localPalettes[3] = new byte[] {0, 19, 20, 21, 0, 2, 3, 2, 1, 0, 4, 21, 32, 33, 34, 35};
+	    pal.localPalettes[1] = new byte[] {0, 22, 23, 24, 0, 2, 3, 2, 1, 0, 4, 21, 32, 33, 34, 35};
+	    pal.localPalettes[6] = new byte[] {0, 25, 26, 27, 0, 2, 3, 2, 1, 0, 4, 21, 32, 33, 34, 35};
+	    pal.localPalettes[8] = new byte[] {0, 11, 11, 10, 0, 2, 3, 2, 1, 0, 4, 21, 32, 33, 34, 35};
+	    pal.localPalettes[9] = new byte[] {0, 26, 26, 25, 0, 2, 3, 2, 1, 0, 4, 21, 32, 33, 34, 35};
+
+	    field.offsetX = 0;
+	    field.offsetY = 0;
+
+	    for (int i = 0; i < 33; i++) {
+	      for (int j = 0; j < 33; j++) {
+	        if (i == 0 || i == 31 || j == 0 || j == 31) {
+	          field.tiles[(i * 64 + j)] = 23;
+	        } else {
+	          field.tiles[(i * 64 + j)] = 24;
+	        }
+	      }
+	    }
+	  }
+	
+	 static EnemyList createEnemies() {
+			
+			list1.createCreature();
+			return list1;
+		}
+	 
+	 private void doAction() {
+		    if (dua.getKey(KeyEvent.VK_A)) {
+		      moveLeft();
+		    }
+		    if (dua.getKey(KeyEvent.VK_D)) {
+		      moveRight();
+		    }
+		    if (dua.getKey(KeyEvent.VK_Q) && lastCounterSpin <= 0) {
+		      lastCounterSpin = 4;
+		      flipCounter();
+		    }
+		    if (dua.getKey(KeyEvent.VK_E) && lastClockSpin <= 0) {
+		      lastClockSpin = 4;
+		      flipClock();
+		    }
+		    if (dua.getKey(KeyEvent.VK_S)) {
+		      apparentSpeed = speed / 3;
+		    } else {
+		      apparentSpeed = speed;
+		    }
+		    if(dua.getKey(KeyEvent.VK_1)) {
+		    	
+		    }
+		    if(dua.getKey(KeyEvent.VK_2)) {
+		    	
+		    }
+		    if(dua.getKey(KeyEvent.VK_3)) {
+		    	
+		    }
+		    if(dua.getKey(KeyEvent.VK_4)) {
+		    	
+		    }
+		  }
+  
+  	static void fight() {
+  		Fight fight1 = new Fight( list1.enemyDeck, deck1.newDeck );
+  		fight1.firstMove();
+  	}
+  */
+  
+  
 }
