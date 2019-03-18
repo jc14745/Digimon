@@ -11,6 +11,7 @@ import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+
 public class Board extends JPanel implements ActionListener {
 
   Layer[] layers;
@@ -28,7 +29,7 @@ public class Board extends JPanel implements ActionListener {
 
   private void initBoard() {
     addKeyListener(dua);
-    setBackground(Color.gray);
+    setBackground(Color.white);
     setFocusable(true);
 
     // This attempts to set the proper frame-rate.

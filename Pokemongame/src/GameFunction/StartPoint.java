@@ -8,7 +8,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import Graphics.*;
-import PokemonGame.TetrisGame;
+import PokemonGame.PokemonGame;
+
 
 
 
@@ -32,22 +33,29 @@ public class StartPoint {
 		}
 	StartPoint() throws InterruptedException, IOException{
 			deck1.createDeck();
+			
+			Fight fight1 = new Fight( list1.enemyDeck, deck1.newDeck );
+			fight1.firstMove();
+			
+			
+			
 			File palFile = new File("Palette0.png");
 		    File tileFile = new File("tetris.png");
-
+		    File zubatFile = new File("Zubat.png");
+		    
 		    Tile[] tiles = getTiles(tileFile);
 		    TileSheet ts = new TileSheet();
 		    ts.tiles = tiles;
 
 		    Palette pal = new Palette(palFile);
-
+		    
 		    Background b0 = new Background(pal, ts);
 
 		    Layer[] layers = new Layer[] {b0};
 
 		    final Board b = new Board(layers);
-
-		    TetrisGame tg = new TetrisGame(b0, pal, b.dua);
+		   
+		    PokemonGame tg = new PokemonGame(b0, pal, b.dua);
 
 		    b.dua.register(KeyEvent.VK_A);
 		    b.dua.register(KeyEvent.VK_Q);
@@ -65,6 +73,7 @@ public class StartPoint {
 		    });
 
 		    Thread.sleep(8 * 60 * 1000);
+		     
 		
 	}
 	 public Tile[] getTiles(File tileFile) throws IOException {
