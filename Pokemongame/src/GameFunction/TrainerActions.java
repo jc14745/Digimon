@@ -28,12 +28,14 @@ public class TrainerActions {
 		if(enemy.getHP()== 0) {
 			personalPokemon.addPokemon(enemy);
 			enemy.setCatchTrue();
+			enemy.setTrue();
 			personalPokemon.Storage[1].removePokeballs();//uses a ball if available
 		}
 		else if(enemy.getHP()<=1) {
 			if(randomChance()<10) {
 				personalPokemon.Storage[1].removePokeballs();
 				personalPokemon.addPokemon(enemy);
+				enemy.setTrue();
 				enemy.setCatchTrue();
 				
 			}else {
@@ -44,6 +46,7 @@ public class TrainerActions {
 				if(randomChance()>5) {
 					personalPokemon.Storage[1].removePokeballs();
 					personalPokemon.addPokemon(enemy);
+					enemy.setTrue();
 					enemy.setCatchTrue();
 				}else {
 					personalPokemon.Storage[1].removePokeballs();
@@ -57,7 +60,7 @@ public class TrainerActions {
 			System.out.println("you have no pokeballs!!:p");
 		}
 		}else {
-			System.out.println("okay");
+			System.out.println("let fights");
 		}
 		}
 	public int randomChance() {
