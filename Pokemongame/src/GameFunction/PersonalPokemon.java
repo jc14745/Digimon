@@ -8,7 +8,6 @@ public class PersonalPokemon
 	Creature[] pokeMon = new Creature[PokeLimits];
 	Items[] Storage = new Items[2];
 	Creature[] BillComputer = new Creature[PokeLimits*2];
-	private int numberofItems;
 	public void storePersonalPokemon(Creature Pokemon) {
 		pokeMon[PokeOrder] = Pokemon;
 		PokeOrder++;
@@ -87,11 +86,20 @@ public class PersonalPokemon
 			pokeStuff.addhealingitems();
 			Storage[0] = pokeStuff;
 		}
-		else if(numberofItems==2) {
+		else if(numberofItem==2) {
 			pokeStuff.addPokeballs();
 			Storage[1] = pokeStuff;
 		}else {
 			System.out.println("we don't have the item yet!?");
 		}
+	}
+	public int getPokeball() {
+		return Storage[1].getPokeBalls();
+	}
+	public int gethealing() {
+		return Storage[0].getHealingPotions();
+	}
+	public int getNumberofPokemon() {
+		return PokeOrder;
 	}
 }

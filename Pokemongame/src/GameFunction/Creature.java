@@ -11,6 +11,7 @@ public class Creature {
 	Creature right;
 	Creature parent;
 	boolean used = false;
+	boolean catchs = false;
 
 	public Creature() {
 		
@@ -87,6 +88,12 @@ public class Creature {
 	}
 	public boolean getUsed() {
 		return this.used;
+	}
+	public boolean Captured() {
+		return catchs;
+		
+	}public void setCatchTrue() {
+		this.catchs = true;
 	}
 
 }

@@ -3,7 +3,7 @@ package GameFunction;
 
 public class Items {
 	int powerRestortions;
-	int pokeBalls;
+	int pokeBalls ;
 	int Healingpotions;
 	
 	public Items(){

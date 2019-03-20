@@ -1,5 +1,4 @@
 package TestCreator;
-
 import org.junit.jupiter.api.Test;
 
 import GameFunction.Creature;

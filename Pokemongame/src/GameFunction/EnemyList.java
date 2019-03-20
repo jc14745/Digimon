@@ -1,9 +1,13 @@
 package GameFunction;
 
 public class EnemyList {
-	
+	public EnemyList(){
+        createCreature();
+
+    }
 		public EnemiesDigimon enemyDeck = new EnemiesDigimon();
 		
+		EnemiesDigimon Deck;
 	public void createCreature() {
 	
 		
@@ -40,5 +44,11 @@ public class EnemyList {
 		enemyDeck.add(Zubat);
 		
 		
+	}
+	public void setCreature() {
+		Deck = enemyDeck;
+	}
+	public EnemiesDigimon getDeck() {
+		return Deck;
 	}
 }

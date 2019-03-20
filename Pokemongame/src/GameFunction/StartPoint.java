@@ -28,7 +28,9 @@ public class StartPoint {
 	StartPoint() throws InterruptedException, IOException{
 			 EnemyList list1 = new EnemyList();
 			 StartDeck deck1 = new StartDeck();
-			
+			 Fight fight1 = new Fight(list1.enemyDeck, deck1.newDeck);
+	            fight1.firstMove();
+			/*
 			File palFile = new File("Palette0.png");
 			File tileFile = new File("pokemon.png");
 		    //File tileFile = new File("tetris.png");
@@ -111,7 +113,7 @@ public class StartPoint {
 
 		    };
 
-		    return tiles;
+		    return tiles;*/
 		  }
 
 }

@@ -1,33 +1,38 @@
 package GameFunction;
 
+import java.util.Scanner;
+
 import Graphics.DelayedUpdateAdapter;
 
 public class Fight {
-	
 	public DelayedUpdateAdapter dua;
 	EnemiesDigimon enemyDeck;
 	PersonalPokemon personalDeck;
 	Creature enemy, ally;
-	public Fight(EnemiesDigimon enemyDeck, PersonalPokemon personalDeck, DelayedUpdateAdapter dua){
+	int Chose;	
+	Scanner input = new Scanner(System.in);
+	
+	public Fight(EnemiesDigimon enemyDeck, PersonalPokemon personalDeck){
 		this.enemyDeck = enemyDeck;
 		this.personalDeck = personalDeck;
 		this.enemy = getEnemy();
-		this.ally = getPersonalPokemon();
-		this.dua = dua;
+		this.ally = getPersonalPokemon(0);
+	
 	}
 	public Creature getEnemy(){
 		return enemyDeck.getEnemy(enemyDeck.getRoot());
 	}
-	public Creature getPersonalPokemon() {
+	public Creature getPersonalPokemon(int digimon) {
 		//wait for keystroke select pokemon
-		return personalDeck.getPokemon(0);//for now its 0
+		//add scanner class
+		return personalDeck.getPokemon(digimon);//for now its 0
 	}
 	
 	public void firstMove(){
 		System.out.println(this.enemy.getName() + " " +this.enemy.getHP());
 		System.out.println(this.ally.getName() + " " + this.ally.getHP());
 		
-		TrainerActions trainerActionsDuringFight = new TrainerActions(this.ally, this.getEnemy());
+		
 		if(this.ally.getHP() == 0 || this.ally.getHP() < 0) {
 			lost();
 		}
@@ -38,13 +43,21 @@ public class Fight {
 		}
 		
 		else if(this.ally.getSpeed() > this.getEnemy().getSpeed()) {
-			
-			trainerActionsDuringFight.capture();//key stroke choose action
-			
+			//there are two method at the bottom
+			TrainerActions trainerActionsDuringFight = new TrainerActions(personalDeck, this.getEnemy());
+			CaptureDialoge();
+			trainerActionsDuringFight.capture(Chose);
+			if(this.enemy.catchs == false) {
+			//key stroke choose action
 			attack(this.ally, this.enemy);
 			System.out.println(this.getEnemy().getHP());
 			nextMove1();
 			firstMove();
+			}
+			else {
+				
+			}
+			
 		}
 		else{
 			//automatic attack from attack list
@@ -61,7 +74,12 @@ public class Fight {
 	
 	public void nextMove2(){
 		//keystrokes to choose action
+		TrainerActions trainerActionsDuringFight = new TrainerActions(personalDeck, this.getEnemy());
+		CaptureDialoge();
+		trainerActionsDuringFight.capture(Chose);
+		if(this.enemy.catchs == false) {
 		attack(this.ally, this.getEnemy());
+		}
 	}
 	
 	public void attack(Creature a, Creature b){//creature a attacks creature b and takes b's hp away
@@ -80,7 +98,16 @@ public class Fight {
 	}
 	public void lost() {
 		System.out.println("your pokemon died");
-		
 	}
+	public void setChose(int Chose) {
+		this.Chose = Chose;
+	}
+	public void CaptureDialoge() {
+		System.out.println("Would you like to Capture this pokemon?");
+		System.out.println("Hit 1 for Yes and Hit 0 for No");
+		int Chose = input.nextInt();
+		setChose(Chose);
+	}
+	
 }
 
