@@ -122,6 +122,7 @@ public class Fight {
 		System.out.println("Hit 1 for Yes and Hit 0 for No");
 		int Chose = input.nextInt();
 		setChose(Chose);
+		
 	}
 	
 }
