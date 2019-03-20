@@ -19,7 +19,7 @@ public class TextedbasedPoke {
 		System.out.println("Welcome Trainer Please yell me your Name");
 		String Name = input.next();
 		deckP.SetName(Name);
-		System.out.println("Welome"+deckP.getName()+" to the wonderful world of Digimon");
+		System.out.println("Welome "+deckP.getName()+" to the wonderful world of Digimon");
 		System.out.println(" Your First Pokemon will be Peekatchu!");
 		System.out.println("Now its time to fight Lets GO YOU fithly Smite Player!!");
 		deckE.createCreature();

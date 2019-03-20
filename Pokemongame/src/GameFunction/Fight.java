@@ -10,13 +10,14 @@ public class Fight {
 	PersonalPokemon personalDeck;
 	Creature enemy, ally;
 	int Chose;	
+	int digimon;
 	Scanner input = new Scanner(System.in);
 	
 	public Fight(EnemiesDigimon enemyDeck, PersonalPokemon personalDeck){
 		this.enemyDeck = enemyDeck;
 		this.personalDeck = personalDeck;
 		this.enemy = getEnemy();
-		this.ally = getPersonalPokemon(0);
+		this.ally = getPersonalPokemon(digimon);
 	
 	}
 	public Creature getEnemy(){
@@ -25,6 +26,7 @@ public class Fight {
 	public Creature getPersonalPokemon(int digimon) {
 		//wait for keystroke select pokemon
 		//add scanner class
+		this.digimon = digimon;
 		return personalDeck.getPokemon(digimon);//for now its 0
 	}
 	
