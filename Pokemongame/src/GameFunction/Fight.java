@@ -45,8 +45,12 @@ public class Fight {
 		else if(this.ally.getSpeed() > this.getEnemy().getSpeed()) {
 			//there are two method at the bottom
 			TrainerActions trainerActionsDuringFight = new TrainerActions(personalDeck, this.getEnemy());
+			if(personalDeck.getPokeball()!=0) {
 			CaptureDialoge();
 			trainerActionsDuringFight.capture(Chose);
+			}else if(personalDeck.getPokeball()==0) {
+				System.out.println("oh no you outta pokeballs! #feelsBadMan");
+			}
 			if(this.enemy.catchs == false) {
 			//key stroke choose action
 			attack(this.ally, this.enemy);
@@ -61,22 +65,31 @@ public class Fight {
 		}
 		else{
 			//automatic attack from attack list
+			if(this.enemy.catchs == false) {
 			attack(this.enemy,this.ally);
 			System.out.println(this.ally.getName() + " " + this.ally.getHP());
 			nextMove2();
 			firstMove();
+			}
 		}
 	}
 	public void nextMove1(){
 		//automatic attack from attack list
+		if(this.enemy.catchs == false) {
 		attack(this.getEnemy(),this.ally);
+		}
 	}
 	
 	public void nextMove2(){
 		//keystrokes to choose action
 		TrainerActions trainerActionsDuringFight = new TrainerActions(personalDeck, this.getEnemy());
+		if(personalDeck.getPokeball()!=0) {
 		CaptureDialoge();
 		trainerActionsDuringFight.capture(Chose);
+		}
+		else if(personalDeck.getPokeball()==0) {
+			System.out.println("oh no you outta pokeballs! #feelsBadMan");
+		}
 		if(this.enemy.catchs == false) {
 		attack(this.ally, this.getEnemy());
 		}

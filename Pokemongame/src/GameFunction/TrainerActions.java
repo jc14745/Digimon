@@ -29,6 +29,7 @@ public class TrainerActions {
 			personalPokemon.addPokemon(enemy);
 			enemy.setCatchTrue();
 			enemy.setTrue();
+			System.out.println("You have caught "+ enemy.getName());
 			personalPokemon.Storage[1].removePokeballs();//uses a ball if available
 		}
 		else if(enemy.getHP()<=1) {
@@ -37,6 +38,7 @@ public class TrainerActions {
 				personalPokemon.addPokemon(enemy);
 				enemy.setTrue();
 				enemy.setCatchTrue();
+				System.out.println("You have caught "+ enemy.getName());
 				
 			}else {
 				personalPokemon.Storage[1].removePokeballs();
@@ -48,6 +50,7 @@ public class TrainerActions {
 					personalPokemon.addPokemon(enemy);
 					enemy.setTrue();
 					enemy.setCatchTrue();
+					System.out.println("You have caught "+ enemy.getName());
 				}else {
 					personalPokemon.Storage[1].removePokeballs();
 					System.out.println("you have failed to capture");
