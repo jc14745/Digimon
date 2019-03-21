@@ -18,25 +18,25 @@ public void getMove() {
 	
 }
 public String Move(String movement) {
- if(movement.equalsIgnoreCase("w")) {
+ if(movement.equalsIgnoreCase("w")) {//move forward
 	 Chances =+10;
 	 ChoseRandom(Chances, Enemy);
 	 setDirections(up);
 	 return up;
  }
- else if(movement.equalsIgnoreCase("s")) {
+ else if(movement.equalsIgnoreCase("s")) {//move backward
 	 Chances =+10;
 	 ChoseRandom(Chances, Enemy);
 	 setDirections(down);
 	 return down;
  }
- else if(movement.equalsIgnoreCase("a")) {
+ else if(movement.equalsIgnoreCase("a")) {//move left
 	 Chances =+10;
 	 ChoseRandom(Chances, Enemy);
 	 setDirections(left);
 	 return left;
  }
- else if(movement.equalsIgnoreCase("d")) {
+ else if(movement.equalsIgnoreCase("d")) {//move right
 	 Chances =+10;
 	 ChoseRandom(Chances, Enemy);
 	 setDirections(right);
