@@ -88,7 +88,7 @@ public class Creature {
 		this.used = false;
 	}
 	public boolean getUsed() {
-		return this.used;
+return this.used;
 	}
 	public boolean Captured() {
 		return catchs;

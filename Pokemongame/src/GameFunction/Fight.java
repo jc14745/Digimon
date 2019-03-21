@@ -168,7 +168,13 @@ public class Fight {
 		System.out.println("Would you like to Capture this pokemon?");
 		System.out.println("Hit 1 for Yes and Hit 0 for No");
 		int Chose = input.nextInt();
+		if(Chose == 0 || Chose == 1) {
 		setChose(Chose);
+		}
+		else {
+			System.out.println("invalid anwer please try again");
+			CaptureDialoge();
+		}
 		
 	}public void healingPokeCenter(){
 		for(int pokeheal = numberPoke; pokeheal >= 0;pokeheal--) {

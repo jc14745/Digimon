@@ -130,7 +130,7 @@ public class PersonalPokemon
 		
 	}
 	public int checkNumpoke(int poke) {
-		if(poke > PokeOrder && poke < PokeLimits) {
+		if(poke <= PokeOrder && poke < PokeLimits) {
 			return poke;
 		}else {
 			System.out.println("invalid number");
