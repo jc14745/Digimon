@@ -17,10 +17,10 @@ public class EnemiesDigimon{
 	public Creature getEnemy(Creature C) {
 		if(C.getUsed()) {
 			if(random()==0) {
-				getEnemy(C.getLeft());
+				C = getEnemy(C.getLeft());
 			}
 			else {
-				getEnemy(C.getRight());
+				C = getEnemy(C.getRight());
 			}
 		}
 		return C;

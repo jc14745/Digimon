@@ -11,6 +11,9 @@ public class Fight {
 	Creature enemy, ally;
 	int Chose;	
 	int digimon;
+	int lives;
+	int numberPoke = 1;
+	boolean fighton = true;
 	Scanner input = new Scanner(System.in);
 	
 	public Fight(EnemiesDigimon enemyDeck, PersonalPokemon personalDeck){
@@ -31,6 +34,7 @@ public class Fight {
 	}
 	
 	public void firstMove(){
+		if(enemy.getUsed()==false) {
 		System.out.println(this.enemy.getName() + " " +this.enemy.getHP());
 		System.out.println(this.ally.getName() + " " + this.ally.getHP());
 		
@@ -61,7 +65,8 @@ public class Fight {
 			firstMove();
 			}
 			else {
-				
+				this.enemy = getEnemy();
+				firstMove();
 			}
 			
 		}
@@ -73,6 +78,9 @@ public class Fight {
 			nextMove2();
 			firstMove();
 			}
+		}
+		}else {
+			
 		}
 	}
 	public void nextMove1(){
@@ -109,10 +117,49 @@ public class Fight {
 		}
 	public void win() {
 		System.out.println("you won");
+		enemy.setTrue();
+		enemy = enemyDeck.getEnemy(enemy);
+		personalDeck.money();
 		
 	}
 	public void lost() {
 		System.out.println("your pokemon died");
+		if(personalDeck.PokeOrder==numberPoke) {
+			System.out.println("would you like to heal your pokemon?>_< plz say yess "+"Your "+ally.getName()+" needs you<3");
+			System.out.println("hit 1 for yes and hit 0 for no");
+			lives= input.nextInt();
+			lives(lives);
+		}else if(personalDeck.PokeOrder > 1){
+			for(int pokemon = 0; pokemon < personalDeck.pokeMon.length-1;pokemon++) {
+				if(personalDeck.pokeMon[pokemon].getHP() == 0) {
+					numberPoke++;
+				}else if(personalDeck.pokeMon[pokemon] == null){
+					System.out.println("you have no more pokemon");
+					fighton=false;
+					break;
+				}else if(numberPoke == 6){
+					System.out.println("all your pokemon are dead");
+					fighton=false;
+					break;
+				}else {
+					break;
+				}
+			}
+			if(fighton) {
+			ally = personalDeck.pokeMon[numberPoke];
+			firstMove();
+			}
+		}else {
+			System.out.println("would you like to heal your pokemons?>_< plz say yess ");
+			System.out.println("hit 1 for yes and hit 0 for no");
+			lives= input.nextInt();
+			if(lives==1) {
+				healingPokeCenter();
+			}else if(lives==0){
+				System.out.println("Game Over");
+			}
+		}
+		
 	}
 	public void setChose(int Chose) {
 		this.Chose = Chose;
@@ -123,6 +170,23 @@ public class Fight {
 		int Chose = input.nextInt();
 		setChose(Chose);
 		
+	}public void healingPokeCenter(){
+		for(int pokeheal = numberPoke; pokeheal >= 0;pokeheal--) {
+			personalDeck.pokeMon[pokeheal].setHP(personalDeck.pokeMonStats[pokeheal].getHP());
+		}
+		numberPoke = 1;
+		System.out.println("all your pokemon are healed!");
+	}public void lives(int lives) {
+		if(lives==1) {
+			personalDeck.pokecenter(ally);
+		}else if(lives==0){
+			System.out.println("Game Over");
+		}else {
+			System.out.println("incorrect numebr put in Try again your pokemon need you?");
+			System.out.println("Hit 1 for Yes and Hit 0 for No");
+			lives = input.nextInt();
+			lives(lives);
+		}
 	}
 	
 }

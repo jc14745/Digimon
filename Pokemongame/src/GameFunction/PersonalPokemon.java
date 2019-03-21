@@ -1,15 +1,21 @@
 package GameFunction;
 
+import java.util.Scanner;
+
 public class PersonalPokemon
 {
+	int Money;
 	int PokeOrder;
 	int PokeLimits = 6;
 	int PokeStorageNum;
+	Creature[] pokeMonStats = new Creature[PokeLimits*2];
 	Creature[] pokeMon = new Creature[PokeLimits];
 	Items[] Storage = new Items[2];
 	Creature[] BillComputer = new Creature[PokeLimits*2];
+	Scanner input = new Scanner(System.in);
 	public void storePersonalPokemon(Creature Pokemon) {
 		pokeMon[PokeOrder] = Pokemon;
+		pokeMonStats[PokeOrder] = Pokemon;
 		PokeOrder++;
 	}
 	public Creature getPokemon(int i) {
@@ -46,6 +52,7 @@ public class PersonalPokemon
 	public void addPokemon(Creature newPokemon) {
 		if(PokeOrder != 6) {
 			pokeMon[PokeOrder] = newPokemon;
+			pokeMonStats[PokeOrder] = newPokemon;
 		PokeOrder++;
 		
 		}
@@ -62,14 +69,21 @@ public class PersonalPokemon
 		BillComputer[PokeStorageNum] = newPokemon;
 		PokeStorageNum++;
 	}//it needs a way to change pokemon
-	public void changePokemonfromStorage(String NameCreature) {
+	public void changePokemonfromStorage(String NameCreatureOut, String CreatureIn) {
+		int In = 0;
+		for(int pokein=0; pokein < pokeMon.length-1;pokein++) {
+			if(CreatureIn.equalsIgnoreCase(pokeMon[pokein].getName())) {
+				In = pokein;
+			}
+		}
 		for(int NumofPoke = 0; NumofPoke < BillComputer.length-1;NumofPoke++) {
-			if(NameCreature.equalsIgnoreCase(BillComputer[NumofPoke].name)) {
-				if(PokeOrder >= 6) {
-					System.out.println("you have too many pokemon");
-				}else {
-					pokeMon[PokeOrder] = BillComputer[NumofPoke];
-				}
+			if(NameCreatureOut.equalsIgnoreCase(BillComputer[NumofPoke].name)) {
+					Creature temp = pokeMon[In];
+					Creature temp2 = BillComputer[NumofPoke];
+					pokeMon[In] = temp2;
+					BillComputer[NumofPoke] = temp;
+					pokeMonStats[In] =temp2;
+					pokeMonStats[NumofPoke] = temp;
 			}
 		}
 	}//this will increase the space for storing computers
@@ -102,4 +116,27 @@ public class PersonalPokemon
 	public int getNumberofPokemon() {
 		return PokeOrder;
 	}
+	public void money() {
+		Money =+100;
+	}public int getMoney() {
+		return Money;
+	}
+	public void pokecenter(Creature Ally) {
+		for(int pokemon = 0; pokemon < pokeMonStats.length-1;pokemon++) {
+			if(Ally.getName().equalsIgnoreCase(pokeMonStats[pokemon].getName())) {
+				Ally.setHP(pokeMonStats[pokemon].getHP());
+			}
+		}
+		
+	}
+	public int checkNumpoke(int poke) {
+		if(poke > PokeOrder && poke < PokeLimits) {
+			return poke;
+		}else {
+			System.out.println("invalid number");
+			poke = input.nextInt();
+			checkNumpoke(poke);
+		}
+		return poke;
+			}
 }
