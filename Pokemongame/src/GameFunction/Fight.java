@@ -24,7 +24,10 @@ public class Fight {
 	
 	}
 	public Creature getEnemy(){
+		
 		return enemyDeck.getEnemy(enemyDeck.getRoot());
+		
+		
 	}
 	public Creature getPersonalPokemon(int digimon) {
 		//wait for keystroke select pokemon
@@ -35,14 +38,14 @@ public class Fight {
 	
 	public void firstMove(){
 		if(enemy.getUsed()==false) {
-		System.out.println(this.enemy.getName() + " " +this.enemy.getHP());
-		System.out.println(this.ally.getName() + " " + this.ally.getHP());
+		System.out.println(this.enemy.getName() + " " +this.enemy.getTmpHealth());
+		System.out.println(this.ally.getName() + " " + this.ally.getTmpHealth());
 		
 		
-		if(this.ally.getHP() == 0 || this.ally.getHP() < 0) {
+		if(this.ally.getTmpHealth() == 0 || this.ally.getTmpHealth() < 0) {
 			lost();
 		}
-		else if(this.getEnemy().getHP() < 0) {
+		else if(this.getEnemy().getTmpHealth()< 0) {
 			System.out.println("You have killed the enemy pokemon.");
 				this.getEnemy().setTrue();
 				win();
@@ -108,10 +111,10 @@ public class Fight {
 	public void attack(Creature a, Creature b){//creature a attacks creature b and takes b's hp away
 		if(b.getDefense() < a.getAttack()) {
 			
-		b.setHP(b.getHP()-a.attack);
+		b.setTmpHealth(b.getTmpHealth()-a.attack);
 		}
 		else {
-			b.setHP(b.getHP()- (a.attack/2)); 
+			b.setTmpHealth(b.getTmpHealth()- (a.attack/2)); 
 		
 			}
 		}
@@ -131,7 +134,7 @@ public class Fight {
 			lives(lives);
 		}else if(personalDeck.PokeOrder > 1){
 			for(int pokemon = 0; pokemon < personalDeck.pokeMon.length-1;pokemon++) {
-				if(personalDeck.pokeMon[pokemon].getHP() == 0) {
+				if(personalDeck.pokeMon[pokemon].getTmpHealth() == 0) {
 					numberPoke++;
 				}else if(personalDeck.pokeMon[pokemon] == null){
 					System.out.println("you have no more pokemon");
@@ -176,9 +179,11 @@ public class Fight {
 			CaptureDialoge();
 		}
 		
-	}public void healingPokeCenter(){
+	}
+	public void healingPokeCenter(){
 		for(int pokeheal = numberPoke; pokeheal >= 0;pokeheal--) {
-			personalDeck.pokeMon[pokeheal].setHP(personalDeck.pokeMonStats[pokeheal].getHP());
+			personalDeck.pokeMon[pokeheal].resetTmpHealth();
+			//personalDeck.pokeMon[pokeheal].setHP(personalDeck.pokeMonStats[pokeheal].getHP());
 		}
 		numberPoke = 1;
 		System.out.println("all your pokemon are healed!");

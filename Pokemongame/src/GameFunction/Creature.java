@@ -7,6 +7,7 @@ public class Creature {
 	int defense;
 	int HP;
 	int level;
+	int tmpHealth;
 	Creature left;
 	Creature right;
 	Creature parent;
@@ -27,6 +28,7 @@ public class Creature {
 		this.defense = defense;
 		this.HP = HP;
 		this.level = level;
+		this.tmpHealth = HP;
 	}
 	
 	public String getName() {
@@ -101,6 +103,15 @@ return this.used;
 	}
 	public void setEncounter() {
 		Encounter = true;
+	}
+	public int getTmpHealth() {
+		return this.tmpHealth;
+	}
+	public void setTmpHealth(int tmpHealth) {
+		this.tmpHealth = tmpHealth;
+	}
+	public void resetTmpHealth(){
+		this.tmpHealth = this.getHP();
 	}
 
 }
