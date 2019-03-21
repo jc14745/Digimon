@@ -41,7 +41,7 @@ public class TextedbasedPoke {
 		deckP.getDeck().money();
 		int money= deckP.getDeck().getMoney();
 		System.out.println("you have won the first battle here your money"+" "+money);
-		while(true) {
+		while(deckP.getDeck().getGameOver()) {
 			move.setEnemy(deckE.getDeck().getEnemy(deckE.getDeck().getRoot()));
 			System.out.println("where would you like to go?");
 			System.out.println("Place input only W A S D");

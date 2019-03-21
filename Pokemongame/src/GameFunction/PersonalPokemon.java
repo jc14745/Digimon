@@ -8,6 +8,7 @@ public class PersonalPokemon
 	int PokeOrder;
 	int PokeLimits = 6;
 	int PokeStorageNum;
+	boolean GameOver = true;
 	Creature[] pokeMonStats = new Creature[PokeLimits*2];
 	Creature[] pokeMon = new Creature[PokeLimits];
 	Items[] Storage = new Items[2];
@@ -143,4 +144,9 @@ public class PersonalPokemon
 		}
 		return poke;
 			}
+	public void setGameOver() {
+		GameOver = false;
+	}public boolean getGameOver() {
+		return GameOver;
+	}
 }
