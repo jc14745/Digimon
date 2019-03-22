@@ -2,6 +2,7 @@ package GameFunction;
 
 public class StartDeck {
 	String Name;
+	boolean GameOver = true;
 	 public StartDeck(){
         createDeck();
         
@@ -23,6 +24,10 @@ public class StartDeck {
 		}
 		public PersonalPokemon getDeck() {
 			return newDeck;
+		}public void setGameOver() {
+			GameOver = false;
+		}public boolean getGameOver() {
+			return GameOver;
 		}
 		
 		

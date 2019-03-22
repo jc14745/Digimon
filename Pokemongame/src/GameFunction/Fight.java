@@ -159,6 +159,7 @@ public class Fight {
 			if(lives==1) {
 				healingPokeCenter();
 			}else if(lives==0){
+				personalDeck.setGameOver();
 				System.out.println("Game Over");
 			}
 		}
@@ -189,8 +190,10 @@ public class Fight {
 		System.out.println("all your pokemon are healed!");
 	}public void lives(int lives) {
 		if(lives==1) {
-			personalDeck.pokecenter(ally);
+			personalDeck.pokeMon[0].resetTmpHealth();;
+			System.out.println("your pokemon is healed");
 		}else if(lives==0){
+			personalDeck.setGameOver();
 			System.out.println("Game Over");
 		}else {
 			System.out.println("incorrect number put in Try again your pokemon need you?");
@@ -201,4 +204,3 @@ public class Fight {
 	}
 	
 }
-
