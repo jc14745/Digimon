@@ -9,7 +9,6 @@ import GameFunction.MovementTrainer;
 import GameFunction.StartDeck;
 
 public class TextedbasedPoke {
-
 	public static void main(String[] args) {
 		StartDeck deckP = new StartDeck();
 		EnemyList deckE = new EnemyList();
@@ -32,10 +31,8 @@ public class TextedbasedPoke {
 		for(int poke = 0; poke < deckP.newDeck.getNumberofPokemon();poke++) {
 			System.out.println(poke + " " + deckP.getDeck().getPokemon(poke).getName());
 		}
-		int pokenumber = input.nextInt();
-		pokenumber = deckP.getDeck().checkNumpoke(pokenumber);
-		input.nextLine();
-		System.out.println("Go "+fight.getPersonalPokemon(pokenumber).getName()+"!");
+		String Spokenumber = input.nextLine();
+		System.out.println("Go "+fight.getPersonalPokemon(deckP.getDeck().CheckingChosePoke(Spokenumber)).getName()+"!");
 		System.out.println("Go "+deckE.getDeck().getRoot().getName()+"!");
 		fight.firstMove();
 		deckP.getDeck().money();

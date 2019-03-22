@@ -8,6 +8,7 @@ public class PersonalPokemon
 	int PokeOrder;
 	int PokeLimits = 6;
 	int PokeStorageNum;
+	int pokenumber;
 	boolean GameOver = true;
 	Creature[] pokeMonStats = new Creature[PokeLimits*2];
 	Creature[] pokeMon = new Creature[PokeLimits];
@@ -129,19 +130,27 @@ public class PersonalPokemon
 				}
 		}
 	}
-	public int checkNumpoke(int poke) {
-		if(poke <= PokeOrder && poke < PokeLimits) {
-			return poke;
-		}else {
-			System.out.println("invalid number");
-			poke = input.nextInt();
-			checkNumpoke(poke);
-		}
-		return poke;
-			}
 	public void setGameOver() {
 		GameOver = false;
 	}public boolean getGameOver() {
 		return GameOver;
+	}
+	public int  CheckingChosePoke(String A) {
+		if(A.contains("0")||A.contains("1")||A.contains("2")||A.contains("3")||A.contains("4")||A.contains("5")) {
+			pokenumber = Integer.parseInt(A);
+			if(pokenumber < PokeOrder) {
+					 return pokenumber;
+			}else {
+				System.out.println("invalid Pokemon slot");
+				A = input.nextLine();
+				CheckingChosePoke(A);
+			}
+		
+		}else {
+			System.out.println("invalid Pokemon slot");
+			A = input.nextLine();
+			CheckingChosePoke(A);
+		}
+		return pokenumber;
 	}
 }
