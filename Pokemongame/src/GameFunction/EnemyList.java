@@ -31,17 +31,18 @@ public class EnemyList {
 		Creature Paras = new Creature("Paras", 2, 4, 3, 12, 3);//#046
 		
 		
-		//Creature Bellsprout = new Creature("Bellsprout", );
+		Creature Bellsprout = new Creature("Bellsprout", 1, 5, 8, 18 ,3);
 		
 		Zubat.setRight(Caterpie);
 		Zubat.setLeft(Pidgey);
 		Zubat.getLeft().setLeft(Rattata);
 		Zubat.getLeft().setRight(Clefairy);
 		Zubat.getRight().setLeft(Paras);
+		Zubat.getRight().setRight(Bellsprout);
 		
 		
 		enemyDeck.createRoot(Zubat);
-		enemyDeck.add(Zubat);
+		//enemyDeck.add(Zubat);
 		
 		
 	}

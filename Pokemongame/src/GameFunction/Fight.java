@@ -51,7 +51,7 @@ public class Fight {
 				win();
 		}
 		
-		else if(this.ally.getSpeed() > this.getEnemy().getSpeed()) {
+		else if(this.ally.getSpeed() > this.enemy.getSpeed()) {
 			//there are two method at the bottom
 			TrainerActions trainerActionsDuringFight = new TrainerActions(personalDeck, this.getEnemy());
 			if(personalDeck.getPokeball()!=0) {
@@ -193,7 +193,7 @@ public class Fight {
 		}else if(lives==0){
 			System.out.println("Game Over");
 		}else {
-			System.out.println("incorrect numebr put in Try again your pokemon need you?");
+			System.out.println("incorrect number put in Try again your pokemon need you?");
 			System.out.println("Hit 1 for Yes and Hit 0 for No");
 			lives = input.nextInt();
 			lives(lives);

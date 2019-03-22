@@ -42,16 +42,14 @@ public class TextedbasedPoke {
 		int money= deckP.getDeck().getMoney();
 		System.out.println("you have won the first battle here your money"+" "+money);
 		while(true) {
-			move.setEnemy(deckE.getDeck().getEnemy(deckE.getDeck().getRoot()));
+			
+			//move.setEnemy(deckE.getDeck().getEnemy(deckE.getDeck().getRoot()));
 			System.out.println("where would you like to go?");
 			System.out.println("Place input only W A S D");
 			String movement = input.nextLine();
-			move.Move(movement);
+			move.Move(movement, fight);
 			System.out.println(" you have moved "+move.getDirections());
-			if(move.getEnemy().getEncounter()) {
-				System.out.println("Pokemon detested near by");
-				fight.firstMove();
-			}
+			
 		}
 	}
 

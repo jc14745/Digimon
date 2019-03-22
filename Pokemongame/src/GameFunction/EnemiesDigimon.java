@@ -1,5 +1,5 @@
 package GameFunction;
-//check what i did here
+
 public class EnemiesDigimon{
 	Creature root;
 	public void createRoot(Creature root) {
@@ -8,20 +8,37 @@ public class EnemiesDigimon{
 	public Creature getRoot() {
 		return this.root;
 	}	
-	public void add(Creature node) {
-		System.out.println(node.getName());
-		if(node.getLeft() != null) add(node.left);
-		if(node.getRight() != null) add(node.right);
+	public void resetNull(Creature node) {
+		if(node != null) { 
+			node.resetTmpHealth();
+			node.setFalse();
+		}
+		if(node.getLeft() != null) { 
+			node.left.resetTmpHealth();
+			node.left.setFalse();
+			}
+		if(node.getRight() != null) {  
+			node.right.resetTmpHealth();
+			node.right.setFalse();
+			}
 	}
 	
 	public Creature getEnemy(Creature C) {//add reset statment to reset all pokemon to unused
 		if(C.getUsed()) {
-			if(random()==0) {
+			if(C.getLeft() != null && random()==0) {
 				C = getEnemy(C.getLeft());
 			}
-			else {
+			else if(C.getRight() != null){
 				C = getEnemy(C.getRight());
 			}
+			else {
+				resetNull(this.root);
+				C = this.root;
+			}
+		}
+		else if(C.getLeft() == null && C.getRight() == null) {
+				resetNull(getRoot());
+				C = this.root;
 		}
 		return C;
 	}

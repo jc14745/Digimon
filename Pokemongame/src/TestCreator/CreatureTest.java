@@ -51,7 +51,7 @@ public class CreatureTest {
 			}
 			*/
 			enemyDeck.createRoot(a);
-			enemyDeck.add(a);
+		//	enemyDeck.add(a);
 
 			MapDigimon Digi = new MapDigimon();
 
@@ -81,7 +81,7 @@ public class CreatureTest {
 			}
 			*/
 			enemyDeck.createRoot(a);
-			enemyDeck.add(a);
+			//enemyDeck.add(a);
 
 		
 			a.setLevel(2);
@@ -125,7 +125,7 @@ public class CreatureTest {
 			}
 			*/
 			enemyDeck.createRoot(a);
-			enemyDeck.add(a);
+			//enemyDeck.add(a);
 
 
 		}

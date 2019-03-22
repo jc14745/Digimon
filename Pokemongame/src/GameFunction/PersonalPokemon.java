@@ -123,15 +123,10 @@ public class PersonalPokemon
 	}
 	public void pokecenter(Creature Ally) {
 		for(int pokemon = 0; pokemon < pokeMonStats.length-1;pokemon++) {
-			if(pokeMonStats[pokemon] != null) {
-			if(Ally.getName().equalsIgnoreCase(pokeMonStats[pokemon].getName())) {
+			if(pokeMonStats[pokemon] != null && Ally.getName().equalsIgnoreCase(pokeMonStats[pokemon].getName())) {
 				Ally.resetTmpHealth();
-				//Ally.setHP(pokeMonStats[pokemon].getHP());
 				}
-			
-			}
 		}
-		
 	}
 	public int checkNumpoke(int poke) {
 		if(poke <= PokeOrder && poke < PokeLimits) {
