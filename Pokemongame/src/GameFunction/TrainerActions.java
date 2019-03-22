@@ -25,14 +25,14 @@ public class TrainerActions {
 		
 		if(Chose == 1) {
 		if(personalPokemon.getPokeball() != 0) {//gets pokeball
-		if(enemy.getHP()== 0) {
+		if(enemy.getTmpHealth()== 0) {
 			personalPokemon.addPokemon(enemy);
 			enemy.setCatchTrue();
 			enemy.setTrue();
 			System.out.println("You have caught "+ enemy.getName());
 			personalPokemon.Storage[1].removePokeballs();//uses a ball if available
 		}
-		else if(enemy.getHP()<=1) {
+		else if(enemy.getTmpHealth() <=1) {
 			if(randomChance()<10) {
 				personalPokemon.Storage[1].removePokeballs();
 				personalPokemon.addPokemon(enemy);
@@ -44,7 +44,7 @@ public class TrainerActions {
 				personalPokemon.Storage[1].removePokeballs();
 				System.out.println("you have failed to capture");
 			}
-			}else if(enemy.getHP() <= 3) {
+			}else if(enemy.getTmpHealth() <= 3) {
 				if(randomChance()>5) {
 					personalPokemon.Storage[1].removePokeballs();
 					personalPokemon.addPokemon(enemy);
@@ -55,7 +55,7 @@ public class TrainerActions {
 					personalPokemon.Storage[1].removePokeballs();
 					System.out.println("you have failed to capture");
 				}
-		}else if(enemy.getHP() >= 4) {
+		}else if(enemy.getTmpHealth() >= 4) {
 			personalPokemon.Storage[1].removePokeballs();
 			System.out.println("you have failed to capture");
 		}

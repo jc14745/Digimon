@@ -21,13 +21,9 @@ public class Fight {
 		this.personalDeck = personalDeck;
 		this.enemy = getEnemy();
 		this.ally = getPersonalPokemon(digimon);
-	
 	}
 	public Creature getEnemy(){
-		
 		return enemyDeck.getEnemy(enemyDeck.getRoot());
-		
-		
 	}
 	public Creature getPersonalPokemon(int digimon) {
 		//wait for keystroke select pokemon
@@ -39,7 +35,7 @@ public class Fight {
 	public void firstMove(){
 		if(enemy.getUsed()==false) {
 		System.out.println(this.enemy.getName() + " " +this.enemy.getTmpHealth());
-		System.out.println(this.ally.getName() + " " + this.ally.getTmpHealth());
+		//System.out.println(this.ally.getName() + " " + this.ally.getTmpHealth());
 		
 		
 		if(this.ally.getTmpHealth() == 0 || this.ally.getTmpHealth() < 0) {
@@ -70,8 +66,7 @@ public class Fight {
 			else {
 				this.enemy = getEnemy();
 				firstMove();
-			}
-			
+			}	
 		}
 		else{
 			//automatic attack from attack list
@@ -82,8 +77,6 @@ public class Fight {
 			firstMove();
 			}
 		}
-		}else {
-			
 		}
 	}
 	public void nextMove1(){
@@ -162,8 +155,7 @@ public class Fight {
 				personalDeck.setGameOver();
 				System.out.println("Game Over");
 			}
-		}
-		
+		}	
 	}
 	public void setChose(int Chose) {
 		this.Chose = Chose;
@@ -173,7 +165,7 @@ public class Fight {
 		System.out.println("Hit 1 for Yes and Hit 0 for No");
 		int Chose = input.nextInt();
 		if(Chose == 0 || Chose == 1) {
-		setChose(Chose);
+			setChose(Chose);
 		}
 		else {
 			System.out.println("invalid anwer please try again");
@@ -184,7 +176,6 @@ public class Fight {
 	public void healingPokeCenter(){
 		for(int pokeheal = numberPoke; pokeheal >= 0;pokeheal--) {
 			personalDeck.pokeMon[pokeheal].resetTmpHealth();
-			//personalDeck.pokeMon[pokeheal].setHP(personalDeck.pokeMonStats[pokeheal].getHP());
 		}
 		numberPoke = 1;
 		System.out.println("all your pokemon are healed!");
