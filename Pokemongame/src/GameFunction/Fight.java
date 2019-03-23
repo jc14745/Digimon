@@ -60,8 +60,7 @@ public class Fight {
 			}
 			if(this.enemy.catchs == false) {
 			//key stroke choose action
-			attack(this.ally, this.enemy);
-			System.out.println(this.getEnemy().getHP());
+			attack();
 			nextMove1();
 			firstMove();
 			}
@@ -73,8 +72,7 @@ public class Fight {
 		else{
 			//automatic attack from attack list
 			if(this.enemy.catchs == false) {
-			attack(this.enemy,this.ally);
-			System.out.println(this.ally.getName() + " " + this.ally.getTmpHealth());
+			attack();
 			nextMove2();
 			firstMove();
 			}
@@ -84,6 +82,10 @@ public class Fight {
 			this.enemy = getEnemy();
 			return;
 		}
+	}
+	public void attack() {
+		attack(this.enemy,this.ally);
+		System.out.println(this.ally.getName() + " " + this.ally.getTmpHealth());
 	}
 	public void nextMove1(){
 		//automatic attack from attack list
@@ -135,7 +137,9 @@ public class Fight {
 			Slives = input.nextLine();
 			checklive(Slives);
 			//this will go thorught the pokemon to check if there dead or not
-		}else if(personalDeck.PokeOrder > 1){
+		}
+		else if(personalDeck.PokeOrder > 1){
+			
 			for(int pokemon = 0; pokemon < personalDeck.pokeMon.length-1;pokemon++) {
 				if(personalDeck.pokeMon[pokemon] == null) {
 					System.out.println("you have no more pokemon");
@@ -162,6 +166,7 @@ public class Fight {
 			else {
 			System.out.println("would you like to heal your pokemons?>_< plz say yess ");
 			System.out.println("hit 1 for yes and hit 0 for no");
+			
 			Slives= input.nextLine();
 			
 			if(checkliveall(Slives)==1) {
@@ -181,6 +186,7 @@ public class Fight {
 	public void CaptureDialoge() {
 		System.out.println("Would you like to Capture this pokemon?");
 		System.out.println("Hit 1 for Yes and Hit 0 for No");
+		
 		Schose = input.nextLine();
 		if(Schose.equalsIgnoreCase("1") || Schose.equalsIgnoreCase("0")) {
 			Chose = Integer.parseInt(Schose);
@@ -201,7 +207,8 @@ public class Fight {
 		}
 		numberPoke = 0;
 		System.out.println("all your pokemon are healed!");
-	}public void lives(int lives) {
+	}
+	public void lives(int lives) {
 		if(lives==1) {
 			personalDeck.pokeMon[0].resetTmpHealth();;
 			System.out.println("your pokemon is healed");
@@ -224,37 +231,34 @@ public class Fight {
 				lives = Integer.parseInt(Slives);
 				lives(lives);
 			}else {
-				if(B.length() >1) {
-					System.out.println("invalid anwer please try again");
-					B = input.nextLine();
-					checklive(B);
-				}else if(lives > 1) {
-					System.out.println("invalid anwer please try again");
-					B = input.nextLine();
-					checklive(B);
-				}
+				check(B);
 			}
 	}
 	// this is to check if the user input a wrong answer
-}public int checkliveall(String B) {
+}
+	public int checkliveall(String B) {
 	lives = Integer.parseInt(B);
 	if(B.equalsIgnoreCase("1") || B.equalsIgnoreCase("0")) {
 		if(lives == 0 || lives == 1) {
 			lives = Integer.parseInt(Slives);
 			return lives;
 		}else {
-			if(B.length() >1) {
-				System.out.println("invalid anwer please try again");
-				B = input.nextLine();
-				checkliveall(B);
-			}else if(lives > 1) {
-				System.out.println("invalid anwer please try again");
-				B = input.nextLine();
-				checkliveall(B);
+			check(B);
 			}
 		}
-}
 	return lives;
-
 }
+	
+	public void check(String B) {
+		if(B.length() >1) {
+			System.out.println("invalid anwer please try again");
+			B = input.nextLine();
+			checkliveall(B);
+		}else if(lives > 1) {
+			System.out.println("invalid anwer please try again");
+			B = input.nextLine();
+			checkliveall(B);
+	}
+
+	}
 }

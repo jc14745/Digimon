@@ -57,8 +57,8 @@ public class TrainerActions {
 		return (int) (Math.random() * 10 + 1);
 	}
 
-	public void caughtPokemon() {
-		personalPokemon.Storage[1].removePokeballs();// uses a ball if available
+	public void caughtPokemon() {//will happen if the pokemon is catchable
+		personalPokemon.Storage[1].removePokeballs();
 		personalPokemon.addPokemon(enemy);
 		enemy.setCatchTrue();
 		enemy.setTrue();
@@ -66,7 +66,7 @@ public class TrainerActions {
 
 	}
 
-	public void uncaughtPokemon() {
+	public void uncaughtPokemon() {//will run if the pokemon ran away
 		personalPokemon.Storage[1].removePokeballs();
 		System.out.println("you have failed to capture");
 	}
