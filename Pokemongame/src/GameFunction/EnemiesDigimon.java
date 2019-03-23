@@ -34,7 +34,7 @@ public class EnemiesDigimon {
 		}
 	}
 
-	public Creature getEnemy(Creature C) {// add reset statment to reset all pokemon to unused
+	public Creature getEnemy(Creature C) {// add reset statement to reset all pokemon to unused
 		if (C.getUsed()) {
 			if (C.getLeft() != null && random() == 0) {
 				C = getEnemy(C.getLeft());

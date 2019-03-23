@@ -10,10 +10,12 @@ public class PersonalPokemon
 	int PokeStorageNum;
 	int pokenumber;
 	boolean GameOver = true;
+	BillComputer storage;
+	
 	Creature[] pokeMonStats = new Creature[PokeLimits*2];
 	Creature[] pokeMon = new Creature[PokeLimits];
 	Items[] Storage = new Items[2];
-	Creature[] BillComputer = new Creature[PokeLimits*2];
+	
 	Scanner input = new Scanner(System.in);
 	public void storePersonalPokemon(Creature Pokemon) {
 		pokeMon[PokeOrder] = Pokemon;
@@ -37,20 +39,20 @@ public class PersonalPokemon
 		}
 	}//this is to move the array down and fix it 
 	public void movePokemonlist() {
-		for(int NumofPoke= 0; NumofPoke < pokeMon.length-1;NumofPoke++) {
-			if(pokeMon[NumofPoke] == null) {
-				if(NumofPoke+1 < pokeMon.length) {
-					pokeMon[NumofPoke] = pokeMon[NumofPoke+1];
+			for(int NumofPoke= 0; NumofPoke < pokeMon.length-1;NumofPoke++) {
+				if(pokeMon[NumofPoke] == null) {
+					if(NumofPoke+1 < pokeMon.length) {
+						pokeMon[NumofPoke] = pokeMon[NumofPoke+1];
+					}
+					else {
+						//this one is to check if it reaches the end of the pokemon array so it doesnt break
+						
+					}
 				}
-				else {
-				//this one is to check if it reaches the end of the pokemon array so it doesnt break	
-				}
-			}
-			else {
-				
-			}
+			}	
 		}
-	}//this will just add the pokemon
+	
+	//this will just add the pokemon
 	public void addPokemon(Creature newPokemon) {
 		if(PokeOrder != 6) {
 			pokeMon[PokeOrder] = newPokemon;
@@ -61,41 +63,11 @@ public class PersonalPokemon
 		else {
 			System.out.println("You have too many pokemon!!");
 			System.out.println("Your pokemone will be store here");
-			storePoke(newPokemon);
+			storage.storePoke(newPokemon,  PokeStorageNum);
 		}
 	}
-	public void storePoke(Creature newPokemon) {
-		if(PokeStorageNum > BillComputer.length) {
-			DoubleSpace();
-		}
-		BillComputer[PokeStorageNum] = newPokemon;
-		PokeStorageNum++;
-	}//it needs a way to change pokemon
-	public void changePokemonfromStorage(String NameCreatureOut, String CreatureIn) {
-		int In = 0;
-		for(int pokein=0; pokein < pokeMon.length-1;pokein++) {
-			if(CreatureIn.equalsIgnoreCase(pokeMon[pokein].getName())) {
-				In = pokein;
-			}
-		}
-		for(int NumofPoke = 0; NumofPoke < BillComputer.length-1;NumofPoke++) {
-			if(NameCreatureOut.equalsIgnoreCase(BillComputer[NumofPoke].name)) {
-					Creature temp = pokeMon[In];
-					Creature temp2 = BillComputer[NumofPoke];
-					pokeMon[In] = temp2;
-					BillComputer[NumofPoke] = temp;
-					pokeMonStats[In] =temp2;
-					pokeMonStats[NumofPoke] = temp;
-			}
-		}
-	}//this will increase the space for storing computers
-	public void DoubleSpace() {
-		Creature[] newTemp = new Creature[BillComputer.length*2];
-		for(int PokeInBill = 0; PokeInBill < PokeStorageNum;PokeInBill++) {
-			newTemp[PokeInBill] = BillComputer[PokeInBill];
-		}
-		this.BillComputer = newTemp;
-	}// the items are going be for now 1 is healing potions and 2 is pokeballs
+	
+	// the items are going be for now 1 is healing potions and 2 is pokeballs
 	public void StoreItems(int numberofItem) {
 		Items pokeStuff = new Items();
 		if(numberofItem == 1) {
