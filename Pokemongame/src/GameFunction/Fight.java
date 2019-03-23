@@ -202,11 +202,12 @@ public class Fight {
 		}
 	}
 	public void healingPokeCenter(){
-		for(int pokeheal = numberPoke; pokeheal >= 0;pokeheal--) {
+		for(int pokeheal = numberPoke-1; pokeheal >= 0;pokeheal--) {
 			personalDeck.pokeMon[pokeheal].resetTmpHealth();
 		}
 		numberPoke = 0;
 		System.out.println("all your pokemon are healed!");
+		this.ally = personalDeck.getPokemon(0);
 	}
 	public void lives(int lives) {
 		if(lives==1) {
