@@ -12,7 +12,7 @@ public class Fight {
 	int Chose;	
 	int digimon;
 	int lives;
-	int numberPoke = 1;
+	int numberPoke = 0;
 	String Schose;
 	String Slives;
 	String movement;
@@ -40,8 +40,6 @@ public class Fight {
 		if(enemy.getUsed()==false) {
 		System.out.println(this.enemy.getName() + " " +this.enemy.getTmpHealth());
 		//System.out.println(this.ally.getName() + " " + this.ally.getTmpHealth());
-		
-		
 		if(this.ally.getTmpHealth() == 0 || this.ally.getTmpHealth() < 0) {
 			lost();
 		}
@@ -136,6 +134,7 @@ public class Fight {
 			System.out.println("hit 1 for yes and hit 0 for no");
 			Slives = input.nextLine();
 			checklive(Slives);
+			//this will go thorught the pokemon to check if there dead or not
 		}else if(personalDeck.PokeOrder > 1){
 			for(int pokemon = 0; pokemon < personalDeck.pokeMon.length-1;pokemon++) {
 				if(personalDeck.pokeMon[pokemon] == null) {
@@ -217,7 +216,7 @@ public class Fight {
 			checklive(Slives);
 				}
 			
-		}
+		}//this also check but for another methods
 	public void checklive(String B) {
 		lives = Integer.parseInt(B);
 		if(B.equalsIgnoreCase("1") || B.equalsIgnoreCase("0")) {
@@ -236,7 +235,7 @@ public class Fight {
 				}
 			}
 	}
-	
+	// this is to check if the user input a wrong answer
 }public int checkliveall(String B) {
 	lives = Integer.parseInt(B);
 	if(B.equalsIgnoreCase("1") || B.equalsIgnoreCase("0")) {
