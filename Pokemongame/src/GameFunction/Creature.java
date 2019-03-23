@@ -13,7 +13,6 @@ public class Creature {
 	Creature parent;
 	boolean used = false;
 	boolean catchs = false;
-	boolean Encounter = false;
 
 	public Creature() {
 
@@ -120,15 +119,7 @@ public class Creature {
 	public void setCatchTrue() {
 		this.catchs = true;
 	}
-
-	public boolean getEncounter() {
-		return Encounter;
-	}
-
-	public void setEncounter() {
-		Encounter = true;
-	}
-
+	
 	public int getTmpHealth() {
 		return this.tmpHealth;
 	}
