@@ -55,16 +55,15 @@ public class MovementTrainer {
 		return movement;
 	}
 
-	public void ChoseRandom(int Chances, Fight fight) {//, Creature enemy
+	public void ChoseRandom(int Chances, Fight fight) { //checks to see if there is an encounter
 		FindDigi = (int) (Math.random() * 100);
 		if (Chances > FindDigi) {
 			System.out.println("Pokemon detested near by");
 			fight.firstMove();
 			resetChances();
 			
-
 		} else {
-			System.out.println("Where to go now?");
+			System.out.println("Where to go now?");//there is no encounter and continues to move
 			move = input.nextLine();
 			Move(move, fight);
 		}
@@ -73,7 +72,6 @@ public class MovementTrainer {
 	public void setDirections(String D) {
 		this.Direction = D;
 	}
-
 	public String getDirections() {
 		return Direction;
 	}
