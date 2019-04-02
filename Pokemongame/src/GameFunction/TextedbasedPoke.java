@@ -1,12 +1,6 @@
-package TestCreator;
+package GameFunction;
 
 import java.util.Scanner;
-
-import GameFunction.EnemyList;
-import GameFunction.Fight;
-import GameFunction.Items;
-import GameFunction.MovementTrainer;
-import GameFunction.StartDeck;
 
 public class TextedbasedPoke {
 	public static void main(String[] args) {
@@ -16,13 +10,13 @@ public class TextedbasedPoke {
 		Items items = new Items();
 		Scanner input = new Scanner(System.in);
 		//this was on purpose ps
-		System.out.println("Welcome Trainer Please yell me your Name");
+		System.out.println("Welcome Trainer Please tell me your Name");
 		String Name = input.nextLine();
 		//add a check method to add more than a word
 		deckP.SetName(Name);
-		System.out.println("Welome "+deckP.getName()+" to the wonderful world of Digimon");
-		System.out.println(" Your First Pokemon will be Peekatchu!");
-		System.out.println("Now its time to fight Lets GO YOU fithly Smite Player!!");
+		System.out.println("Welome "+deckP.getName()+" to the wonderful world of Pokemon");
+	
+		System.out.println("Now its time to fight! Go and capture some Pokemon!");
 		deckE.createCreature();
 		deckE.setCreature();
 		Fight fight = new Fight(deckE.getDeck(), deckP.getDeck());

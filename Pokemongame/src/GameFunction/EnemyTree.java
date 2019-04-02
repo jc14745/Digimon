@@ -1,6 +1,6 @@
 package GameFunction;
 
-public class EnemiesDigimon {
+public class EnemyTree {
 	Creature root;
 
 	public void createRoot(Creature root) {

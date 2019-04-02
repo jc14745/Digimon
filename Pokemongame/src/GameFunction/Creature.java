@@ -131,5 +131,14 @@ public class Creature {
 	public void resetTmpHealth() {
 		this.tmpHealth = this.getHP();
 	}
-
+	public void incrementStats() {
+		int level= getLevel();
+		int attack = getAttack();
+		int speed =getSpeed();
+		int HP = getHP();
+		setLevel(level++);
+		setAttack(attack++);
+		setSpeed(speed+=2);
+		setHP(HP+=5);
+	}
 }

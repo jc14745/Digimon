@@ -2,7 +2,7 @@ package TestCreator;
 import org.junit.jupiter.api.Test;
 
 import GameFunction.Creature;
-import GameFunction.EnemiesDigimon;
+import GameFunction.EnemyTree;
 import GameFunction.PersonalPokemon;
 public class CreatureTest {
 
@@ -38,7 +38,7 @@ public class CreatureTest {
 			a.getRight().setLeft(f);
 			
 			//deck.addPokemon(g);
-			EnemiesDigimon enemyDeck = new EnemiesDigimon();
+			EnemyTree enemyDeck = new EnemyTree();
 			/*enemyDeck.StoreEnemies(a);
 			enemyDeck.StoreEnemies(b);
 			enemyDeck.StoreEnemies(c);

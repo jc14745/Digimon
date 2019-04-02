@@ -1,4 +1,4 @@
-package GameFunction;
+package TestCreator;
 
 import java.awt.EventQueue;
 import java.awt.event.KeyEvent;
@@ -7,6 +7,9 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+import GameFunction.EnemyList;
+import GameFunction.Fight;
+import GameFunction.StartDeck;
 import Graphics.*;
 import PokemonGame.PokemonGame;
 

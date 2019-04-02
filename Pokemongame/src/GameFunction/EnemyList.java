@@ -5,9 +5,9 @@ public class EnemyList {
         createCreature();
 
     }
-		public EnemiesDigimon enemyDeck = new EnemiesDigimon();
+		public EnemyTree enemyDeck = new EnemyTree();
 		
-		EnemiesDigimon Deck;
+		EnemyTree Deck;
 	public void createCreature() {
 	
 		
@@ -49,7 +49,7 @@ public class EnemyList {
 	public void setCreature() {
 		Deck = enemyDeck;
 	}
-	public EnemiesDigimon getDeck() {
+	public EnemyTree getDeck() {
 		return Deck;
 	}
 }

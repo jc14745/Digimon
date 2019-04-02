@@ -5,41 +5,36 @@ import java.util.Scanner;
 import Graphics.DelayedUpdateAdapter;
 
 public class Fight {
-	public DelayedUpdateAdapter dua;
-	EnemiesDigimon enemyDeck;
+	
+	EnemyTree enemyDeck;
 	PersonalPokemon personalDeck;
 	Creature enemy, ally;
-	int Chose;	
-	int digimon;
-	int lives;
+	int Chose, pokemon, lives;
 	int numberPoke = 0;
-	String Schose;
-	String Slives;
-	String movement;
+	String Schose, Slives, movement;
 	boolean fighton = true;
 	MovementTrainer MoveT = new MovementTrainer();
 	Scanner input = new Scanner(System.in);
 	
-	public Fight(EnemiesDigimon enemyDeck, PersonalPokemon personalDeck){
+	public Fight(EnemyTree enemyDeck, PersonalPokemon personalDeck){
 		this.enemyDeck = enemyDeck;
 		this.personalDeck = personalDeck;
 		this.enemy = getEnemy();
-		this.ally = getPersonalPokemon(digimon);
+		this.ally = getPersonalPokemon(pokemon);
 	}
 	public Creature getEnemy(){
 		return enemyDeck.getEnemy(enemyDeck.getRoot());
 	}
-	public Creature getPersonalPokemon(int digimon) {
+	public Creature getPersonalPokemon(int pokemon) {
 		//wait for keystroke select pokemon
 		//add scanner class
-		this.digimon = digimon;
-		return personalDeck.getPokemon(digimon);//for now its 0
+		this.pokemon = pokemon;
+		return personalDeck.getPokemon(pokemon);//for now its 0
 	}
 	
 	public void firstMove(){
 		if(enemy.getUsed()==false) {
-		System.out.println(this.enemy.getName() + " " +this.enemy.getTmpHealth());
-		//System.out.println(this.ally.getName() + " " + this.ally.getTmpHealth());
+		System.out.println("\nEnemy Pokemon:"+ this.enemy.getName() + "   Health:" +this.enemy.getTmpHealth());
 		if(this.ally.getTmpHealth() == 0 || this.ally.getTmpHealth() < 0) {
 			lost();
 		}
@@ -56,10 +51,10 @@ public class Fight {
 			CaptureDialoge();
 			trainerActionsDuringFight.capture(Chose);
 			}else if(personalDeck.getPokeball()==0) {
-				System.out.println("oh no you outta pokeballs! #feelsBadMan");
+				System.out.println("Oh no you outta pokeballs!");
 			}
 			if(this.enemy.catchs == false) {
-			//key stroke choose action
+			
 			attack();
 			nextMove1();
 			firstMove();
@@ -85,7 +80,7 @@ public class Fight {
 	}
 	public void attack() {
 		attack(this.enemy,this.ally);
-		System.out.println(this.ally.getName() + " " + this.ally.getTmpHealth());
+		System.out.println("Your Pokemon:" +this.ally.getName() + "  Health:" + this.ally.getTmpHealth() + "\n");
 	}
 	public void nextMove1(){
 		//automatic attack from attack list
@@ -102,7 +97,7 @@ public class Fight {
 		trainerActionsDuringFight.capture(Chose);
 		}
 		else if(personalDeck.getPokeball()==0) {
-			System.out.println("oh no you outta pokeballs! #feelsBadMan");
+			System.out.println("Oh no you outta pokeballs!");
 		}
 		if(this.enemy.catchs == false) {
 		attack(this.ally, this.getEnemy());
@@ -126,17 +121,20 @@ public class Fight {
 		enemy.setTrue();
 		enemy = enemyDeck.getEnemy(enemy);
 		personalDeck.money();
+		this.ally.incrementStats();
+		
+		
 		
 	}
 	public void lost() {
 		numberPoke = 0;
 		System.out.println("your pokemon died");
 		if(personalDeck.PokeOrder==1) {
-			System.out.println("would you like to heal your pokemon?>_< plz say yess "+"Your pokemons"+" needs you<3");
+			System.out.println("would you like to heal your pokemon?");
 			System.out.println("hit 1 for yes and hit 0 for no");
 			Slives = input.nextLine();
 			checklive(Slives);
-			//this will go thorught the pokemon to check if there dead or not
+			//this will go thought the pokemon to check if there dead or not
 		}
 		else if(personalDeck.PokeOrder > 1){
 			
@@ -164,7 +162,7 @@ public class Fight {
 			firstMove();
 			}
 			else {
-			System.out.println("would you like to heal your pokemons?>_< plz say yess ");
+			System.out.println("would you like to heal your pokemons?");
 			System.out.println("hit 1 for yes and hit 0 for no");
 			
 			Slives= input.nextLine();
@@ -218,7 +216,7 @@ public class Fight {
 			System.out.println("Game Over");
 			System.exit(0);
 		}else {
-			System.out.println("incorrect number put in Try again your pokemon need you?");
+			System.out.println("incorrect number put in Try again your pokemon needs you!");
 			System.out.println("Hit 1 for Yes and Hit 0 for No");
 			Slives = input.nextLine();
 			checklive(Slives);
