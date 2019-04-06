@@ -2,10 +2,10 @@ package GameFunction;
 
 public class TrainerActions {
 	PersonalPokemon personalPokemon;
-	Creature enemy;
+	Creature enemy, ally;
 
 	// this is so i can use the above in this class
-	public TrainerActions(PersonalPokemon personalPokemon, Creature enemy) {
+	public TrainerActions(PersonalPokemon personalPokemon, Creature enemy, Creature ally) {
 		// be able to get personal and enemy pokemon
 		this.personalPokemon = personalPokemon;
 		this.enemy = enemy;
@@ -23,51 +23,55 @@ public class TrainerActions {
 
 	}
 
-	public void capture(int Chose) {
+	public boolean capture(int Choose) {
 
-		if (Chose == 1) {
+		if (Choose == 1) {
 			if (personalPokemon.getPokeball() != 0) {// gets pokeball
 				if (enemy.getTmpHealth() == 0) {
 					caughtPokemon();
 				} else if (enemy.getTmpHealth() <= 1) {
 					if (randomChance() < 10) {
-						caughtPokemon();
+						return caughtPokemon();
 
 					} else {
-						uncaughtPokemon();
+						return uncaughtPokemon();
 					}
 				} else if (enemy.getTmpHealth() <= 3) {
 					if (randomChance() > 5) {
-						caughtPokemon();
+						return caughtPokemon();
 					} else {
-						uncaughtPokemon();
+						return uncaughtPokemon();
 					}
 				} else if (enemy.getTmpHealth() >= 4) {
-					uncaughtPokemon();
+					return uncaughtPokemon();
 				}
 			} else {
 				System.out.println("you have no pokeballs!!:p");
+				return false;
 			}
 		} else {
 			System.out.println("let fights");
+			return false;
 		}
+		return false;
 	}
 
 	public int randomChance() {
 		return (int) (Math.random() * 10 + 1);
 	}
 
-	public void caughtPokemon() {//will happen if the pokemon is catchable
+	public boolean caughtPokemon() {//will happen if the pokemon is catchable
 		personalPokemon.Storage[1].removePokeballs();
 		personalPokemon.addPokemon(enemy);
-		enemy.setCatchTrue();
 		enemy.setTrue();
 		System.out.println("You have caught " + enemy.getName());
+		return true;
 
 	}
 
-	public void uncaughtPokemon() {//will run if the pokemon ran away
+	public boolean uncaughtPokemon() {//will run if the pokemon ran away
 		personalPokemon.Storage[1].removePokeballs();
 		System.out.println("you have failed to capture");
+		return false;
 	}
 }

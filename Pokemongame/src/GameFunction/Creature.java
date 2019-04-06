@@ -2,17 +2,9 @@ package GameFunction;
 
 public class Creature {
 	String name;
-	int speed;
-	int attack;
-	int defense;
-	int HP;
-	int level;
-	int tmpHealth;
-	Creature left;
-	Creature right;
-	Creature parent;
+	int speed, attack, defense, HP, level, tmpHealth;
+	Creature left, right, parent;
 	boolean used = false;
-	boolean catchs = false;
 
 	public Creature() {
 
@@ -111,15 +103,6 @@ public class Creature {
 		return this.used;
 	}
 
-	public boolean Captured() {
-		return catchs;
-
-	}
-
-	public void setCatchTrue() {
-		this.catchs = true;
-	}
-	
 	public int getTmpHealth() {
 		return this.tmpHealth;
 	}

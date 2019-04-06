@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class TextedbasedPoke {
 	public static void main(String[] args) {
+		
 		StartDeck deckP = new StartDeck();
 		EnemyList deckE = new EnemyList();
 		MovementTrainer move = new MovementTrainer();
@@ -26,8 +27,8 @@ public class TextedbasedPoke {
 			System.out.println(poke + " " + deckP.getDeck().getPokemon(poke).getName());
 		}
 		String Spokenumber = input.nextLine();
-		System.out.println("Go "+fight.getPersonalPokemon(deckP.getDeck().CheckingChosePoke(Spokenumber)).getName()+"!");
-		System.out.println("Go "+deckE.getDeck().getRoot().getName()+"!");
+		//System.out.println("Go "+fight.getPersonalPokemon(deckP.getDeck().CheckingChosePoke(Spokenumber)).getName()+"!");
+		//System.out.println("Go "+deckE.getDeck().getRoot().getName()+"!");
 		fight.firstMove();
 		deckP.getDeck().money();
 		int money= deckP.getDeck().getMoney();

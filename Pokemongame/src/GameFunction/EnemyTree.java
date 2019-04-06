@@ -25,34 +25,33 @@ public class EnemyTree {
 			node.setFalse();
 		}
 		if (node.getLeft() != null) {
-			node.left.resetTmpHealth();
-			node.left.setFalse();
+			node.getLeft().resetTmpHealth();
+			node.getLeft().setFalse();
+			resetNull(node.getLeft());
 		}
 		if (node.getRight() != null) {
-			node.right.resetTmpHealth();
-			node.right.setFalse();
+			node.getLeft().resetTmpHealth();
+			node.getLeft().setFalse();
+			resetNull(node.getRight());
 		}
 	}
 
+	
+	
 	public Creature getEnemy(Creature C) {// add reset statement to reset all pokemon to unused
-		if (C.getUsed()) {
-			if (C.getLeft() != null && random() == 0) {
+		
+		if (C.getUsed() == true) {
+			if (C.getLeft() != null && random()%2 == 0) {
 				C = getEnemy(C.getLeft());
 			} else if (C.getRight() != null) {
 				C = getEnemy(C.getRight());
-			} else {
-				resetNull(this.root);
-				C = this.root;
-			}
-		} else if (C.getLeft() == null && C.getRight() == null) {
-			resetNull(getRoot());
-			C = this.root;
-		}
+			} 
+		}	
 		return C;
 	}
 
 	public int random() {
-		int Random = (int) (Math.random() * 1);
+		int Random = (int) (Math.random() * 100);
 		return Random;
 	}
 
