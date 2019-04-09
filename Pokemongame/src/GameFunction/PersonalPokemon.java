@@ -61,8 +61,8 @@ public class PersonalPokemon
 		
 		}
 		else {
-			System.out.println("You have too many pokemon!!");
-			System.out.println("Your pokemone will be store here");
+			System.out.println("You have too many pokemon!");
+			System.out.println("Your pokemon will be stored here.");
 			storage.storePoke(newPokemon,  PokeStorageNum);
 		}
 	}
@@ -78,7 +78,7 @@ public class PersonalPokemon
 			pokeStuff.addPokeballs();
 			Storage[1] = pokeStuff;
 		}else {
-			System.out.println("we don't have the item yet!?");
+			System.out.println("We don't have the item yet.");
 		}
 	}
 	public int getPokeball() {
@@ -113,13 +113,13 @@ public class PersonalPokemon
 			if(pokenumber < PokeOrder) {
 					 return pokenumber;
 			}else {
-				System.out.println("invalid Pokemon slot");
+				System.out.println("Invalid pokemon slot.");
 				A = input.nextLine();
 				CheckingChosePoke(A);
 			}
 		
 		}else {
-			System.out.println("invalid Pokemon slot");
+			System.out.println("Invalid pokemon slot.");
 			A = input.nextLine();
 			CheckingChosePoke(A);
 		}

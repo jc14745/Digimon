@@ -25,10 +25,9 @@ public class Fight {
 		return enemyDeck.getEnemy(enemyDeck.getRoot());
 	}
 	public Creature getPersonalPokemon(int pokemon) {
-		//wait for keystroke select pokemon
-		//add scanner class
+		
 		this.pokemon = pokemon;
-		return personalDeck.getPokemon(pokemon);//for now its 0
+		return personalDeck.getPokemon(pokemon);
 	}
 
 	public void firstMove(){
@@ -51,7 +50,7 @@ public class Fight {
 					if(trainerActionsDuringFight.capture(Choose) == true) win();
 
 				}else if(personalDeck.getPokeball()==0) {
-					System.out.println("Oh no you outta pokeballs!");
+					System.out.println("Oh no you out of pokeballs!");
 				}
 				if(this.enemy.getUsed() == false) {
 					CaptureDialoge();
@@ -93,7 +92,7 @@ public class Fight {
 			if(trainerActionsDuringFight.capture(Choose) == true) win();
 		}
 		else if(personalDeck.getPokeball()==0) {
-			System.out.println("Oh no you outta pokeballs!");
+			System.out.println("Oh no you are out of pokeballs!");
 		}
 		attack(a, b);
 		//this is where it stop after capture
@@ -122,10 +121,10 @@ public class Fight {
 	}
 	public void lost() {
 		numberPoke = 0;
-		System.out.println("your pokemon died");
+		System.out.println("Your pokemon died.");
 		if(personalDeck.PokeOrder==1) {
-			System.out.println("would you like to heal your pokemon?");
-			System.out.println("hit 1 for yes and hit 0 for no");
+			System.out.println("Would you like to heal your pokemon?");
+			System.out.println("Hit 1 for yes and hit 0 for no.");
 			Slives = input.nextLine();
 			checklive(Slives);
 			//this will go thought the pokemon to check if there dead or not
@@ -134,11 +133,11 @@ public class Fight {
 
 			for(int pokemon = 0; pokemon < personalDeck.pokeMon.length-1;pokemon++) {
 				if(personalDeck.pokeMon[pokemon] == null) {
-					System.out.println("you have no more pokemon");
+					System.out.println("You have no more pokemon.");
 					fighton=false;
 					break;
 				}else if(numberPoke == 6){
-					System.out.println("all your pokemon are dead");
+					System.out.println("All your pokemon are dead.");
 					fighton=false;
 					break;
 
@@ -149,15 +148,15 @@ public class Fight {
 					break;
 				}
 				else {
-					System.out.println("Something went very wrong");
+					System.out.println("Something went very wrong.");
 				}
 			}
 			if(fighton) {
 				firstMove();
 			}
 			else {
-				System.out.println("would you like to heal your pokemons?");
-				System.out.println("hit 1 for yes and hit 0 for no");
+				System.out.println("Would you like to heal your pokemon?");
+				System.out.println("Hit 1 for yes and hit 0 for no");
 
 				Slives= input.nextLine();
 
@@ -177,7 +176,7 @@ public class Fight {
 	}
 	public void CaptureDialoge() {
 		System.out.println("Would you like to Capture this pokemon?");
-		System.out.println("Hit 1 for Yes and Hit 0 for No");
+		System.out.println("Hit 1 for Yes and Hit 0 for no.");
 
 		Schoose = input.nextLine();
 		if(Schoose.equalsIgnoreCase("1") || Schoose.equalsIgnoreCase("0")) {
@@ -185,7 +184,7 @@ public class Fight {
 			setChoose(Choose);
 
 		}else {
-			System.out.println("invalid anwer please try again");
+			System.out.println("Invalid anwer please try again.");
 			CaptureDialoge();
 		}
 	}
@@ -194,20 +193,20 @@ public class Fight {
 			personalDeck.pokeMon[pokeheal].resetTmpHealth();
 		}
 		numberPoke = 0;
-		System.out.println("all your pokemon are healed!");
+		System.out.println("All your pokemon are healed!");
 		this.ally = personalDeck.getPokemon(0);
 	}
 
 	public void lives(int lives) {
 		if(lives==1) {
 			personalDeck.pokeMon[0].resetTmpHealth();;
-			System.out.println("your pokemon is healed");
+			System.out.println("Your pokemon is healed.");
 		}else if(lives==0){
 			personalDeck.setGameOver();
 			System.out.println("Game Over");
 			System.exit(0);
 		}else {
-			System.out.println("incorrect number put in Try again your pokemon needs you!");
+			System.out.println("Invalid number.");
 			System.out.println("Hit 1 for Yes and Hit 0 for No");
 			Slives = input.nextLine();
 			checklive(Slives);
@@ -242,11 +241,11 @@ public class Fight {
 
 	public void check(String B) {
 		if(B.length() >1) {
-			System.out.println("invalid anwer please try again");
+			System.out.println("Invalid anwer please try again.");
 			B = input.nextLine();
 			checkliveall(B);
 		}else if(lives > 1) {
-			System.out.println("invalid anwer please try again");
+			System.out.println("Invalid anwer please try again.");
 			B = input.nextLine();
 			checkliveall(B);
 		}

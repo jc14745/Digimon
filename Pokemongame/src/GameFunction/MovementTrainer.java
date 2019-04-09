@@ -37,17 +37,17 @@ public class MovementTrainer {
 		}
 
 		else {
-			System.out.println("this is not a movment");
+			System.out.println("This is not a movment.");
 			movement = input.nextLine();
 			if (movement.length() < 1) {
-				System.out.println("to many inputs");
-				System.out.println("please try to keep the imput to one at the time");
+				System.out.println("Too many inputs.");
+				System.out.println("Please try to keep the input to one at the time.");
 				movement = input.nextLine();
 				Move(movement, fight);
 			} else {
-				System.out.println("this input is invlad");
-				System.out.println("the only input that can be obtain is W A S D.");
-				System.out.println("Please try again");
+				System.out.println("This input is invalid.");
+				System.out.println("The only input that can be accepted is W A S D.");
+				System.out.println("Please try again.");
 				movement = input.nextLine();
 				Move(movement, fight);
 			}
@@ -58,7 +58,7 @@ public class MovementTrainer {
 	public void ChoseRandom(int Chances, Fight fight) { //checks to see if there is an encounter
 		FindDigi = (int) (Math.random() * 100);
 		if (Chances > FindDigi) {
-			System.out.println("Pokemon detested near by");
+			System.out.println("Pokemon detected near by.");
 			fight.firstMove();
 			resetChances();
 			

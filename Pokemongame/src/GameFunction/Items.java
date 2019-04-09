@@ -17,7 +17,7 @@ public class Items {
 	}
 	public void removePokeballs() {
 		if(pokeBalls == 0) {
-			System.out.println("you have no pokeballs");
+			System.out.println("You have no pokeballs.");
 		}else {
 			pokeBalls--;
 		}
@@ -31,7 +31,7 @@ public class Items {
 	}
 	public void removeHealing() {
 		if(Healingpotions == 0) {
-			System.out.println("you have no healing");
+			System.out.println("You have no healing items.");
 		}else {
 			Healingpotions--;
 		}

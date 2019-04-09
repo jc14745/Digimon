@@ -18,7 +18,7 @@ public class TrainerActions {
 			personalPokemon.pokeMon[pokemon].setHP(healing);
 			personalPokemon.Storage[0].removeHealing();
 		} else {
-			System.out.println("No healing Available");
+			System.out.println("No healing available.");
 		}
 
 	}
@@ -46,11 +46,11 @@ public class TrainerActions {
 					return uncaughtPokemon();
 				}
 			} else {
-				System.out.println("you have no pokeballs!!:p");
+				System.out.println("You have no pokeballs!");
 				return false;
 			}
 		} else {
-			System.out.println("let fights");
+			System.out.println("let's fights");
 			return false;
 		}
 		return false;
@@ -64,14 +64,14 @@ public class TrainerActions {
 		personalPokemon.Storage[1].removePokeballs();
 		personalPokemon.addPokemon(enemy);
 		enemy.setTrue();
-		System.out.println("You have caught " + enemy.getName());
+		System.out.println("You have caught " + enemy.getName() + ".");
 		return true;
 
 	}
 
 	public boolean uncaughtPokemon() {//will run if the pokemon ran away
 		personalPokemon.Storage[1].removePokeballs();
-		System.out.println("you have failed to capture");
+		System.out.println("You have failed to capture " + enemy.getName() + ".");
 		return false;
 	}
 }

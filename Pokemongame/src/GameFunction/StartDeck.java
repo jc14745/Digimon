@@ -14,7 +14,7 @@ public class StartDeck {
 			
 			newDeck.StoreItems(2);
 			System.out.println("Hello new trainer! Here is your first pokemon!");
-			System.out.println("You have obtained " + Pikachu.getName() );
+			System.out.println("You have obtained " + Pikachu.getName() + ".");
 		}
 		public void SetName(String Name) {
 			this.Name = Name;

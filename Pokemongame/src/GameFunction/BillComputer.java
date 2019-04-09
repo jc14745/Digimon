@@ -11,7 +11,7 @@ public class BillComputer {
 		BillComputer[PokeStorageNum] = newPokemon;
 		PokeStorageNum++;
 	}
-	//this will increase the space for storing computers
+	//if the computer's limits have been reached, this expands the size of the computer
 		public void DoubleSpace(int PokeStorageNum) {
 			Creature[] newTemp = new Creature[BillComputer.length*2];
 			for(int PokeInBill = 0; PokeInBill < PokeStorageNum;PokeInBill++) {
@@ -20,7 +20,7 @@ public class BillComputer {
 			this.BillComputer = newTemp;
 		}
 		
-	//it needs a way to change pokemon
+	//allows the player to change out pokemon from storage to their current deck
 		public void changePokemonfromStorage(String NameCreatureOut, String CreatureIn, Creature[] pokeMon, Creature[] pokeMonStats) {
 			int In = 0;
 			for(int pokein=0; pokein < pokeMon.length-1;pokein++) {
