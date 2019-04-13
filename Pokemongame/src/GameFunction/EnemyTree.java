@@ -19,7 +19,7 @@ public class EnemyTree {
 			traverse(node.getRight());
 	}
 
-	public void resetNull(Creature node) {// resets all enemy back to full health and allows them to be chosen
+	public void resetNull(Creature node) {				// resets all enemy back to full health and allows them to be chosen
 		if (node != null) {
 			node.resetTmpHealth();
 			node.setFalse();
@@ -38,7 +38,7 @@ public class EnemyTree {
 
 	
 	
-	public Creature getEnemy(Creature C) {// add reset statement to reset all pokemon to unused
+	public Creature getEnemy(Creature C) {							// add reset statement to reset all pokemon to unused
 		
 		if (C.getUsed() == true) {
 			if (C.getLeft() != null && random()%2 == 0) {

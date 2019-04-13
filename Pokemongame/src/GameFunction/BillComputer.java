@@ -2,9 +2,10 @@ package GameFunction;
 
 public class BillComputer {
 	int PokeLimits;
+	static int PokeStorageNum;
 	Creature[] BillComputer = new Creature[PokeLimits*2];
 	
-	public void storePoke(Creature newPokemon, int PokeStorageNum) {
+	public void storePoke(Creature newPokemon) {
 		if(PokeStorageNum > BillComputer.length) {
 			DoubleSpace(PokeStorageNum);
 		}

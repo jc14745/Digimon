@@ -15,22 +15,22 @@ public class MovementTrainer {
 
 	public String Move(String movement, Fight fight) {
 		if (movement.equalsIgnoreCase("w")) {// move forward
-			Chances =+ 25;// 8;
+			Chances =+ 18;
 			ChoseRandom(Chances, fight);
 			setDirections(up);
 			return up;
 		} else if (movement.equalsIgnoreCase("s")) {// move backward
-			Chances =+ 25; //7;
+			Chances =+ 17;
 			ChoseRandom(Chances, fight);
 			setDirections(down);
 			return down;
 		} else if (movement.equalsIgnoreCase("a")) {// move left
-			Chances =+ 25; // 9;
+			Chances =+ 19;
 			ChoseRandom(Chances,fight);
 			setDirections(left);
 			return left;
 		} else if (movement.equalsIgnoreCase("d")) {// move right
-			Chances =+ 25; //8;
+			Chances =+ 18; 
 			ChoseRandom(Chances, fight);
 			setDirections(right);
 			return right;

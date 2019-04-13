@@ -5,11 +5,7 @@ public class Creature {
 	int speed, attack, defense, HP, level, tmpHealth;
 	Creature left, right, parent;
 	boolean used = false;
-
-	public Creature() {
-
-	}
-
+	
 	public Creature(String name) {
 		this.name = name;
 	}

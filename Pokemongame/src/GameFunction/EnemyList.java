@@ -16,22 +16,22 @@ public class EnemyList {
 		Creature Zubat = new Creature("Zubat", 3, 1, 1, 2, 1);//#041
 		
 		
-		Creature Pidgey = new Creature("Pidgey", 3, 1, 2, 5, 2);//#016
+		Creature Pidgey = new Creature("Pidgey", 3, 2, 2, 5, 2);//#016
 	
 		
-		Creature Caterpie  = new Creature("Caterpie ", 3, 1, 2, 5, 2);//#010
+		Creature Caterpie  = new Creature("Caterpie ", 3, 2, 2, 5, 2);//#010
 
 		
-		Creature Rattata = new Creature("Rattata", 4, 3, 1, 6, 3);//#019
+		Creature Rattata = new Creature("Rattata", 4, 3, 1, 8, 3);//#019
 	
 		
-		Creature Clefairy = new Creature("Clefairy", 2, 1, 2, 6, 3);//#035
+		Creature Clefairy = new Creature("Clefairy", 2, 4, 2, 8, 3);//#035
 		
 		
-		Creature Paras = new Creature("Paras", 2, 1, 3, 6, 3);//#046
+		Creature Paras = new Creature("Paras", 2, 3, 3, 10, 3);//#046
 		
 		
-		Creature Bellsprout = new Creature("Bellsprout", 1, 5, 8, 7 ,3);
+		Creature Bellsprout = new Creature("Bellsprout", 1, 6, 8, 9 ,3);
 		
 		Zubat.setRight(Caterpie);
 		Zubat.setLeft(Pidgey);
@@ -42,6 +42,8 @@ public class EnemyList {
 		
 		
 		enemyDeck.createRoot(Zubat);
+		
+		
 		//enemyDeck.add(Zubat);
 		
 		

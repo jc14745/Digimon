@@ -35,6 +35,7 @@ public class PersonalPokemon
 			}
 			else {
 				//this is just to make it go if anything happens
+				System.out.println("removesPokemon error");
 			}
 		}
 	}//this is to move the array down and fix it 
@@ -46,6 +47,7 @@ public class PersonalPokemon
 					}
 					else {
 						//this one is to check if it reaches the end of the pokemon array so it doesnt break
+						System.out.println("movePokemonlist error");
 						
 					}
 				}
@@ -63,7 +65,7 @@ public class PersonalPokemon
 		else {
 			System.out.println("You have too many pokemon!");
 			System.out.println("Your pokemon will be stored here.");
-			storage.storePoke(newPokemon,  PokeStorageNum);
+			storage.storePoke(newPokemon);
 		}
 	}
 	

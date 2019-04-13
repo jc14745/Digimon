@@ -43,7 +43,7 @@ public class Fight {
 			}
 
 			else if(this.ally.getSpeed() > this.enemy.getSpeed()) {
-				//there are two method at the bottom
+				
 				TrainerActions trainerActionsDuringFight = new TrainerActions(personalDeck, this.enemy, this.ally);
 				if(personalDeck.getPokeball()!=0) {
 
@@ -66,7 +66,7 @@ public class Fight {
 				}	
 			}
 			else{
-				//automatic attack from attack list
+				
 				if(this.enemy.getUsed() == false) {
 					attack(this.enemy, this.ally);
 					CaptureDialoge();
