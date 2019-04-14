@@ -1,7 +1,7 @@
 package GameFunction;
 
 public class BillComputer {
-	int PokeLimits;
+	int PokeLimits=100;
 	static int PokeStorageNum;
 	Creature[] BillComputer = new Creature[PokeLimits*2];
 	

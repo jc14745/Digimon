@@ -2,7 +2,7 @@ package GameFunction;
 
 import java.util.Scanner;
 
-public class PersonalPokemon
+public class PersonalPokemon extends BillComputer
 {
 	int Money;
 	int PokeOrder;
@@ -10,11 +10,13 @@ public class PersonalPokemon
 	int PokeStorageNum;
 	int pokenumber;
 	boolean GameOver = true;
-	BillComputer storage;
+	
 	
 	Creature[] pokeMonStats = new Creature[PokeLimits*2];
 	Creature[] pokeMon = new Creature[PokeLimits];
 	Items[] Storage = new Items[2];
+	//this is where the billcomputer storage for some reason it was acting like a data field instead of calling of another class so i 
+	//just extended the billcomputer class so i can have access with all the classes
 	
 	Scanner input = new Scanner(System.in);
 	public void storePersonalPokemon(Creature Pokemon) {
@@ -65,7 +67,7 @@ public class PersonalPokemon
 		else {
 			System.out.println("You have too many pokemon!");
 			System.out.println("Your pokemon will be stored here.");
-			storage.storePoke(newPokemon);
+			storePoke(newPokemon);
 		}
 	}
 	
