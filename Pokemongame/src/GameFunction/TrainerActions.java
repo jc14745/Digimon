@@ -9,13 +9,11 @@ public class TrainerActions {
 		// be able to get personal and enemy pokemon
 		this.personalPokemon = personalPokemon;
 		this.enemy = enemy;
-	}// healing
-
+	}
+	//
 	public void healing(int pokemon) {
 		if (personalPokemon.gethealing() > 0) {
-			int healing = 0;
-			healing = personalPokemon.pokeMon[pokemon].getHP() + 4;
-			personalPokemon.pokeMon[pokemon].setHP(healing);
+			personalPokemon.pokeMon[pokemon].resetTmpHealth();
 			personalPokemon.Storage[0].removeHealing();
 		} else {
 			System.out.println("No healing available.");

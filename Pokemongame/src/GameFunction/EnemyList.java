@@ -1,5 +1,7 @@
 package GameFunction;
-
+/*once the enemy list is intantiated the class auto generates the enemy binary tree 
+ * putting the enemy pokemon and their preset stats in a binary tree
+ */
 public class EnemyList {
 	public EnemyList(){
         createCreature();
@@ -19,7 +21,7 @@ public class EnemyList {
 		Creature Pidgey = new Creature("Pidgey", 3, 2, 2, 5, 2);//#016
 	
 		
-		Creature Caterpie  = new Creature("Caterpie ", 3, 2, 2, 5, 2);//#010
+		Creature Caterpie  = new Creature("Caterpie", 3, 2, 2, 5, 2);//#010
 
 		
 		Creature Rattata = new Creature("Rattata", 4, 3, 1, 8, 3);//#019
@@ -42,10 +44,6 @@ public class EnemyList {
 		
 		
 		enemyDeck.createRoot(Zubat);
-		
-		
-		//enemyDeck.add(Zubat);
-		
 		
 	}
 	public void setCreature() {

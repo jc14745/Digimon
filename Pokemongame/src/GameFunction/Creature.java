@@ -1,11 +1,12 @@
 package GameFunction;
-
+/*creates a Creature object that stores the Creature's name, attack, defense, HP, level, and temp health
+* a left, right, and parent creature is also created as to easily place in a binary tree when creating the enemy tree class
+*/
 public class Creature {
 	String name;
 	int speed, attack, defense, HP, level, tmpHealth;
 	Creature left, right, parent;
 	boolean used = false;
-	
 	public Creature(String name) {
 		this.name = name;
 	}
@@ -102,19 +103,17 @@ public class Creature {
 	public int getTmpHealth() {
 		return this.tmpHealth;
 	}
-
+	//tmphealth reprensent the actual health of the pokemon without loosing the data of the base health of the pokemon
 	public void setTmpHealth(int tmpHealth) {
 		this.tmpHealth = tmpHealth;
 	}
-
+	
 	public void resetTmpHealth() {
 		this.tmpHealth = this.getHP();
 	}
+	//increments the stats of the player pokemon that won the fight
 	public void incrementStats() {
-		int level= getLevel();
-		int attack = getAttack();
-		int speed =getSpeed();
-		int HP = getHP();
+		
 		setLevel(level++);
 		setAttack(attack++);
 		setSpeed(speed+=2);

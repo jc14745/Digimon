@@ -1,5 +1,4 @@
 package GameFunction;
-
 import java.util.Scanner;
 
 public class Fight {
@@ -25,7 +24,7 @@ public class Fight {
 		return enemyDeck.getEnemy(enemyDeck.getRoot());
 	}
 	public Creature getPersonalPokemon(int pokemon) {
-		
+
 		this.pokemon = pokemon;
 		return personalDeck.getPokemon(pokemon);
 	}
@@ -43,7 +42,7 @@ public class Fight {
 			}
 
 			else if(this.ally.getSpeed() > this.enemy.getSpeed()) {
-				
+
 				TrainerActions trainerActionsDuringFight = new TrainerActions(personalDeck, this.enemy, this.ally);
 				if(personalDeck.getPokeball()!=0) {
 
@@ -52,31 +51,25 @@ public class Fight {
 				}else if(personalDeck.getPokeball()==0) {
 					System.out.println("Oh no you out of pokeballs!");
 				}
-				if(this.enemy.getUsed() == false) {
+				//if the ally is faster than the enemy then the ally pokemon will go first
 					CaptureDialoge();
 					attack(this.ally, this.enemy);
 					nextMove(this.enemy,this.ally);
 					firstMove();
-				}
-				else {
-					
-					enemyDeck.resetNull(enemyDeck.getRoot());
-					enemyDeck.getEnemy(enemyDeck.getRoot());
-					firstMove();
-				}	
 			}
 			else{
-				
-				if(this.enemy.getUsed() == false) {
+				//if the enemy is faster than the ally then the enemy pokemon will go first
 					attack(this.enemy, this.ally);
 					CaptureDialoge();
 					nextMove(this.ally, this.enemy);
 					firstMove();
-				}
 			}
 		}
 		else {
-			
+			/*when the node that is returned is just the leaf node and that leaf node has already been used
+			  then the entire tree is traversed and the stats of all the defeated pokemon are reset
+			  making the worst case scenario for this data structure be O(n)
+			*/
 			enemyDeck.resetNull(enemyDeck.getRoot());
 			enemy = enemyDeck.getEnemy(enemyDeck.getRoot());
 			firstMove();
@@ -85,7 +78,7 @@ public class Fight {
 
 	}
 
-
+	//
 	public void nextMove(Creature a, Creature b){
 		TrainerActions trainerActionsDuringFight = new TrainerActions(personalDeck, this.enemy, this.ally);
 		if(personalDeck.getPokeball()!=0) {
@@ -95,8 +88,6 @@ public class Fight {
 			System.out.println("Oh no you are out of pokeballs!");
 		}
 		attack(a, b);
-		//this is where it stop after capture
-
 	}
 
 	public void attack(Creature a, Creature b){//creature a attacks creature b and takes b's hp away

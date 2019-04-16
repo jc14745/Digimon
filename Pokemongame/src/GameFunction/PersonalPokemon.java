@@ -11,7 +11,6 @@ public class PersonalPokemon extends BillComputer
 	int pokenumber;
 	boolean GameOver = true;
 	
-	
 	Creature[] pokeMonStats = new Creature[PokeLimits*2];
 	Creature[] pokeMon = new Creature[PokeLimits];
 	Items[] Storage = new Items[2];
