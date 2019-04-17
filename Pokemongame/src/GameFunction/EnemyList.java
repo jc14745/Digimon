@@ -45,6 +45,13 @@ public class EnemyList {
 		
 		enemyDeck.createRoot(Zubat);
 		
+		/*					  zubat							level 1
+		 * 		          /             \
+		 * 			pidgey	            caterpie			level 2
+		 * 			/    \             /        \
+		 * 		rattata  clefariy    paras    bellsprout	level 3
+		 */
+		
 	}
 	public void setCreature() {
 		Deck = enemyDeck;
